@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8723d2026ad716e4c8333d2efb93c050, type: 3}
+  m_Name: DialogData
+  m_EditorClassIdentifier: 
+  DialogJsons:
+  - {fileID: 4900000, guid: b02ddab0450efb3419d5df448d171870, type: 3}
+  a: 1
+  b: 1
+  SpeakerSprite:
+  - {fileID: -623335152, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
+  - {fileID: 2108521686, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
+  - {fileID: 988508369, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
+  - {fileID: 0}
+  BalloonSprite:
+  - {fileID: 1435372123, guid: 2585e628a121ce14198ce9a8be1fab7d, type: 3}
+  - {fileID: -124352633, guid: 2585e628a121ce14198ce9a8be1fab7d, type: 3}
+  - {fileID: 0}

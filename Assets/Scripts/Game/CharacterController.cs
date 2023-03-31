@@ -95,8 +95,9 @@ public class CharacterController : MonoBehaviour
     {
         if(CanWalk)
         {
-            //_move = new Vector3(Input.GetAxisRaw("Horizontal"),0,Input.GetAxisRaw("Vertical"));
-            _move = new Vector3(-Input.GetAxisRaw("Vertical"),0,Input.GetAxisRaw("Horizontal"));
+
+            //_move = new Vector3(-Input.GetAxisRaw("Vertical"),0,Input.GetAxisRaw("Horizontal"));
+            _move = new Vector3(-Input.GetAxis("Vertical"),0,Input.GetAxis("Horizontal"));
             transform.LookAt(transform.position + _move,Vector3.up);
             _move *= 50 * _speed * Time.deltaTime;
         }
