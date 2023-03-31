@@ -5,21 +5,32 @@ using Ink;
 using Ink.UnityIntegration;
 using System.Collections.Generic;
 
+
+
+//bu saçmalığı en baştan yazmam lazım aslında ama, çok yazık.
 namespace Assets.Scripts.WIP
 {
     public class DialogRunner : MonoBehaviour
     {
-        Balloon[] BalloonScripts;
         [SerializeField]
-        Transform BalloonCanvas;
+        Balloon[] BalloonScripts = new Balloon[3];
         [SerializeField]
         Story diag;
         [SerializeField]
         DialogsData Data;
 
         Dialog currentDiag;
-
-
+        private void Awake()
+        {
+            BalloonClose(0);
+        }
+        private void Update()
+        {
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                TestDiag();
+            }
+        }
         float? rectHeight;
         int currentBalloon = 0;
 
@@ -27,7 +38,7 @@ namespace Assets.Scripts.WIP
         [ContextMenu("TestDiag")]
         public void TestDiag()
         {
-            Dialog(Data.DialogStory[0]);
+            StartCoroutine(Dialog(Data.DialogStory[0]));
         }
 
         /// <summary>
@@ -42,7 +53,7 @@ namespace Assets.Scripts.WIP
             // Start the story if it hasn't already been started
             if (!story.canContinue)
             {
-                story.ChoosePathString("Dialogs/Test");
+                story.state.GoToStart();
                 //yield return new WaitForSeconds(4);
             }
 
@@ -50,29 +61,37 @@ namespace Assets.Scripts.WIP
             while (story.canContinue)
             {
                 string text = story.Continue();
+                BalloonAdd(story: story);
                 //TODO: Display the text to the player
-                yield return new WaitForSeconds(4);
                 currentBalloon++;
+                BalloonClose(currentBalloon);
+                yield return new WaitForSeconds(4);
                 
             }
             currentBalloon = 0;
-            
+            BalloonClose(currentBalloon);
+            yield return new WaitForSeconds(0);
         }
 
 
-
+        public void BalloonAdd(Story story)
+        {
+            BalloonUpdate();
+            BalloonScripts[0].SetBalloonDiag(StoryToDiag(story: story));
+        }
         public void BalloonUpdate()
         {
-            for(int i = 1; i > 0; i++)
+            for(int i = 1; i >= 0; i--)
             {
                 BalloonScripts[i+1].SetBalloonDiag(BalloonScripts[i].GetBalloonDiag());
             }
+            
         }
-        public void BalloonClose()
+        public void BalloonClose(int update)
         {
-            foreach(Balloon ball in BalloonScripts)
+            for(int i = 0; i <= 2; i++)
             {
-                ball.Object.SetActive(false);
+                BalloonScripts[i].Object.SetActive(i< update ? true : false);
             }
         }
 
@@ -90,7 +109,7 @@ namespace Assets.Scripts.WIP
         {
             Dialog Temp = new Dialog();
             Temp.DialogText = story.currentText;
-            HandleTags(currentTags: story.currentTags, tempDiag: Temp);
+            Temp = HandleTags(currentTags: story.currentTags,  Temp);
             return Temp;
         }
 
@@ -98,8 +117,9 @@ namespace Assets.Scripts.WIP
         /// a function i copied
         /// </summary>
         /// <param name="currentTags"></param>
-        public void HandleTags(List<string> currentTags, Dialog tempDiag)
+        public Dialog HandleTags(List<string> currentTags,  Dialog Diag)
         {
+            Dialog temp = Diag;
             // loop through each tag and handle it accordingly
             foreach (string tag in currentTags)
             {
@@ -116,16 +136,18 @@ namespace Assets.Scripts.WIP
                 switch (tagKey)
                 {
                     case "Speaker":
-                        tempDiag.Speaker = Data.getSpeakerSprite(tagValue);
+                        temp.Speaker = Data.getSpeakerSprite(tagValue);
                         break;
                     case "Balloon":
-                        tempDiag.Balloon = Data.getBalloonSprite(tagValue);
+                        temp.Balloon = Data.getBalloonSprite(tagValue);
                         break;
                     default:
                         Debug.LogWarning("Tag came in but is not currently being handled: " + tag);
                         break;
                 }
             }
+            return temp;
+
         }
     }
 }

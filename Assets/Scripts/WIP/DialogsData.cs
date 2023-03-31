@@ -27,7 +27,7 @@ namespace Assets.Scripts.WIP
         public Sprite getBalloonSprite(string str)
         {
             var temp = DialogBalloon.Parse(typeof(DialogBalloon), str);
-            return SpeakerSprite[(int)temp];
+            return BalloonSprite[(int)temp];
         }
         [ContextMenu("Awake")]
         private void Awake()
@@ -40,7 +40,12 @@ namespace Assets.Scripts.WIP
             b = DialogJsons.Count;
             a = DialogStory.Count;
         }
-        
+#if UNITY_EDITOR
+        private void OnEnable()
+        {
+            Awake();
+        }
+#endif
     }
 
     public struct Dialog
