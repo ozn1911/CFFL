@@ -99,7 +99,7 @@ public class CharacterController : MonoBehaviour
             //_move = new Vector3(-Input.GetAxisRaw("Vertical"),0,Input.GetAxisRaw("Horizontal"));
             _move = new Vector3(-Input.GetAxis("Vertical"),0,Input.GetAxis("Horizontal"));
             transform.LookAt(transform.position + _move,Vector3.up);
-            _move *= 50 * _speed * Time.deltaTime;
+            
         }
     }
 
@@ -108,6 +108,8 @@ public class CharacterController : MonoBehaviour
     /// </summary>
     void Movement()
     {
+        _move = Vector3.ClampMagnitude(_move, 1);
+        _move *= 50 * _speed * Time.deltaTime;
         _rb.velocity = new Vector3(_move.x,_rb.velocity.y, _move.z);
     }
     #endregion

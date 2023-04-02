@@ -20,8 +20,11 @@ MonoBehaviour:
   - {fileID: -623335152, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
   - {fileID: 2108521686, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
   - {fileID: 988508369, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
+  - {fileID: -1539806355, guid: 3b249d383c3209e4c8354938bd31ced0, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   BalloonSprite:
   - {fileID: 1435372123, guid: 2585e628a121ce14198ce9a8be1fab7d, type: 3}
   - {fileID: -124352633, guid: 2585e628a121ce14198ce9a8be1fab7d, type: 3}
+  - {fileID: 0}
   - {fileID: 0}

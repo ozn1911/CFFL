@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-namespace Assets.Scripts.WIP
+namespace Assets.Scripts.Dialog
 {
     public class Balloon : MonoBehaviour
     {

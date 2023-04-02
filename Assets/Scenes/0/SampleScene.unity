@@ -1062,7 +1062,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CanWalk: 1
   platform: {fileID: 11400000, guid: 9c8666b5e06ed2147940cf329cacc123, type: 2}
-  _speed: 25
+  _speed: 8
 --- !u!1 &1444235952
 GameObject:
   m_ObjectHideFlags: 0
@@ -3415,6 +3415,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4897983175971111107, guid: 58a4b4b0a91064442956f3f34617aeea, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 2108521686, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 58a4b4b0a91064442956f3f34617aeea, type: 3}
 --- !u!1 &5358495335983888882

@@ -5,11 +5,12 @@ using Ink.Runtime;
 using System.IO;
 
 
-namespace Assets.Scripts.WIP
+namespace Assets.Scripts.Dialog
 {
 [CreateAssetMenu(fileName = "DialogData",menuName = "Dat?/DiagDat")]
     public class DialogsData : ScriptableObject
     {
+        public static DialogsData Data;
         public List<TextAsset> DialogJsons;
         public List<Story> DialogStory = new List<Story>();
 
@@ -19,6 +20,7 @@ namespace Assets.Scripts.WIP
         public Sprite[] BalloonSprite;
 
 
+        #region EnumParse
         public Sprite getSpeakerSprite(string str)
         {
             var temp = DialogSpeaker.Parse(typeof(DialogSpeaker), str);
@@ -29,11 +31,15 @@ namespace Assets.Scripts.WIP
             var temp = DialogBalloon.Parse(typeof(DialogBalloon), str);
             return BalloonSprite[(int)temp];
         }
+        #endregion
+
+        #region Awake
         [ContextMenu("Awake")]
         private void Awake()
         {
+            Data = this;
             DialogStory.Clear();
-            foreach(TextAsset str in DialogJsons)
+            foreach (TextAsset str in DialogJsons)
             {
                 DialogStory.Add(new Story(str.text));
             }
@@ -45,7 +51,8 @@ namespace Assets.Scripts.WIP
         {
             Awake();
         }
-#endif
+#endif 
+        #endregion
     }
 
     public struct Dialog
