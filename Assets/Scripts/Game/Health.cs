@@ -24,7 +24,7 @@ namespace Assets.Scripts.Game
         {
             if(_healthPoints <= 0)
             {
-                SendMessage("CharacterDeath",SendMessageOptions.RequireReceiver);
+                SendMessage("CharacterDeath",SendMessageOptions.DontRequireReceiver);
             }
         }
 
