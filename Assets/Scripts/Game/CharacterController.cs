@@ -22,7 +22,7 @@ namespace Assets.Scripts.Game
         [SerializeField]
         bool CanWalk;
 
-        PlatformEnum _platform;
+
         #endregion
         #region Movement Variables
         /// <summary>
@@ -39,12 +39,12 @@ namespace Assets.Scripts.Game
         #region Unity Functions
         private void Awake()
         {
-            _platform = (PlatformEnum)Platform.instance;
+
             GetRigidbody(Rigidbody: out _rb);
 
             if (MyEvent == null)
             {
-                switch (_platform)
+                switch (Platform.instance._Platform)
                 {
                     case PlatformEnum.Windows:
                     case PlatformEnum.Linux:

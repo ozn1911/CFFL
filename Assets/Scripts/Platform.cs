@@ -8,10 +8,16 @@ namespace Assets.Scripts
     {
         public static Platform instance;
         public PlatformEnum _Platform;
-        public static explicit operator PlatformEnum(Platform plt)
+
+        private void Awake()
         {
-            return plt._Platform;
+            instance = this;
         }
+        //public static explicit operator PlatformEnum(Platform plt)
+        //{
+        //    return Platform.instance._Platform;
+        //}
+
 
         private void OnEnable()
         {

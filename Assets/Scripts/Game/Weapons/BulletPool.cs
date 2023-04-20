@@ -1,51 +1,77 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEditor;
 
 namespace Assets.Scripts.Game.Weapons
 {
     public class BulletPool : MonoBehaviour
     {
+        [Header("Pool Settings")]
         [SerializeField]
         public int PoolSize = 100;
+        int _currentBullet = 0;
+        [SerializeField, NonReorderable]
+        GameObject[] _bulletPool;
+        Bullet[] _bulletData;
+
         [SerializeField]
         GameObject _bulletTemplate;
-        GameObject[] _bulletPool;
-        int _currentBullet = 0;
+
 
         private void Awake()
         {
             _bulletPool = new GameObject[PoolSize];
+            _bulletData = new Bullet[PoolSize];
             for (int i = 0; i < PoolSize; i++)
             {
-                GameObject bullet = Instantiate(_bulletTemplate);
-                bullet.SetActive(false);
-                _bulletPool[i] = _bulletTemplate;
+                if ((_bulletPool[i] == null))
+                {
+                    GameObject bullet = Instantiate(_bulletTemplate);
+                    _bulletData[i] = bullet.GetComponent<Bullet>();
+                    bullet.SetActive(false);
+                    _bulletPool[i] = bullet;
+                }
             }
         }
-        
 
 
 
-
-        GameObject GetBullet()
+        public void FireBullet(Vector3 start, Vector3 direction, float bulletLifetime)
+        {
+            GameObject bullet = GetBullet(out int index);
+            _bulletData[index].Lifetime = bulletLifetime;
+            bullet.transform.position = start;
+            bullet.transform.LookAt(bullet.transform.position + direction);
+            bullet.SetActive(true);
+        }
+        public void FireBulletLookat(Vector3 start, Vector3 direction, float bulletLifetime)
+        {
+            GameObject bullet = GetBullet(out int index);
+            _bulletData[index].Lifetime = bulletLifetime;
+            bullet.transform.position = start;
+            bullet.transform.LookAt(direction, Vector3.up);
+            bullet.SetActive(true);
+        }
+        GameObject GetBullet(out int index)
         {
             int i = 0;
-            while(_bulletPool[_currentBullet + i].activeSelf)
+            while (_bulletPool[(_currentBullet + i)%(PoolSize)].activeSelf)
             {
                 i++;
-                if(i == PoolSize)
+                if (i == PoolSize)
                 {
                     Debug.LogError("_bulletPool is all used up, you need to incerase bullet pool");
                     goto escape;
-                    while (true? false? true : false : true? false : true || false? true? false : true : false? true : false)
+                    while (true ? false ? true : false : true ? false : true || false ? true ? false : true : false ? true : false)
                         Debug.Log("why so serious?");
                 }
             }
             _currentBullet += i;
+            _currentBullet %= PoolSize;
+            index = _currentBullet;
             return _bulletPool[_currentBullet];
-            escape:
-            return null; //this will crash the code, in case logerror didnt already stopped it
+        escape:
+            index = 0;
+            return null; //this will probably crash the game, in case logerror didnt already stopped it
 
         }
 

@@ -8,6 +8,7 @@ namespace Assets.Scripts.Game
         [SerializeField]
         float _baseMaxHP = 100;
         float _maxHealthPoints;
+        [SerializeField]
         float _healthPoints;
         [SerializeField, Min(0)]
         float _shieldPoints = 0;
@@ -25,6 +26,7 @@ namespace Assets.Scripts.Game
             if(_healthPoints <= 0)
             {
                 SendMessage("CharacterDeath",SendMessageOptions.DontRequireReceiver);
+                gameObject.SetActive(false);
             }
         }
 

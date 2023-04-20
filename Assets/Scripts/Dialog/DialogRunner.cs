@@ -15,8 +15,6 @@ namespace Assets.Scripts.Dialog
         Balloon[] BalloonScripts = new Balloon[3];
         [SerializeField]
         Story diag;
-        [SerializeField]
-        DialogsData Data;
         int currentBalloon = 0;
 
 
@@ -36,7 +34,7 @@ namespace Assets.Scripts.Dialog
         [ContextMenu("TestDiag")]
         public void TestDiag()
         {
-            StartCoroutine(Dialog(Data.DialogStory[0]));
+            StartCoroutine(Dialog(DialogsData.Data.DialogStory[0]));
         }
 
         /// <summary>
