@@ -6,9 +6,12 @@ namespace Assets.Scripts.Game.Weapons
 {
     public class PlayerWeapons : MonoBehaviour
     {
+        [SerializeField]
         private WeaponsEnum _currentWeapon;
         [SerializeField]
         private GameObject[] _weapons;
+        public int[] _ammonution;
+        float lastfire;
         private WeaponStructure[] _weaponStructures;
 
         Ray ray;
@@ -26,13 +29,11 @@ namespace Assets.Scripts.Game.Weapons
             }
         }
 
-
-        public WeaponsEnum CurrentWeapon;
-
         public void WeaponFire()
         {
             WeaponStructure structure = _weaponStructures[((int)_currentWeapon)];
-            structure.Pool.FireBulletLookat(start: structure.Barrel.position,direction: hit.point, 4f);
+            Weapon wp = WeaponStats.instance.Weapons[((int)_currentWeapon)];
+            structure.Pool.FireBulletLookat(start: structure.Barrel.position,direction: hit.point, wp.BulletDamage, wp.BulletSpeed, wp.BulletLifetime);
         }
 
         private void Update()
@@ -52,14 +53,22 @@ namespace Assets.Scripts.Game.Weapons
 
         private void FixedUpdate()
         {
-            if(mousefire)
-                WeaponFire();
+            if (mousefire)
+                if (lastfire + WeaponStats.instance.Weapons[((int)_currentWeapon)].FireRate < Time.time)
+                {
+                    lastfire = Time.time;
+                    WeaponFire();
+                }
         }
 
 
         public void ChangeWeapon(WeaponsEnum weapon)
         {
-            CurrentWeapon = weapon;
+            _weapons[((int)_currentWeapon)].SetActive(false);
+            _currentWeapon = weapon;
+            _weapons[((int)_currentWeapon)].SetActive(true);
+
+            
         }
 
 

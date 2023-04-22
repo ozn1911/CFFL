@@ -10,5 +10,7 @@ namespace Assets.Scripts.Game.Weapons
         public string WeaponName;
         public float BulletDamage;
         public float BulletSpeed;
+        public float BulletLifetime;
+        public float FireRate;
     }
 }

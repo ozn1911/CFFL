@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9474d5b13f341c54e85ebe4b943d369a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PoolSize: 100
+  PoolSize: 300
   _bulletPool: []
   _bulletTemplate: {fileID: 1781284187446078517, guid: 0d0b9b6181e9338488b9006772468bce, type: 3}
 --- !u!114 &7114923587333242908

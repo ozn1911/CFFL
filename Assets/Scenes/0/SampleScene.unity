@@ -478,7 +478,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: f0aaf8610f7e31d4fb89cbed5ea020a8, type: 3}
 --- !u!23 &772613989
@@ -1329,7 +1329,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: f0aaf8610f7e31d4fb89cbed5ea020a8, type: 3}
 --- !u!23 &1495310440
@@ -1412,7 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95993f78437f9414489864fe30dbcb75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseMaxHP: 100
+  _baseMaxHP: 10000
   _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
@@ -1801,7 +1801,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -5495902117074765545, guid: f0aaf8610f7e31d4fb89cbed5ea020a8, type: 3}
 --- !u!23 &1572368848
@@ -2882,9 +2882,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614bcb43ec367e47bc827286a551624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _currentWeapon: 0
   _weapons:
   - {fileID: 1092764305}
-  CurrentWeapon: 0
+  _ammonution: 
 --- !u!114 &1863484173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3497,10 +3498,6 @@ PrefabInstance:
     - target: {fileID: 2551392595626335159, guid: fa745571a004e154e82c4128489565cd, type: 3}
       propertyPath: m_Name
       value: GameObject
-      objectReference: {fileID: 0}
-    - target: {fileID: 5845698285938256399, guid: fa745571a004e154e82c4128489565cd, type: 3}
-      propertyPath: PoolSize
-      value: 10000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa745571a004e154e82c4128489565cd, type: 3}

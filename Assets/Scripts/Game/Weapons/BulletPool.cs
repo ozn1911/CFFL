@@ -51,6 +51,18 @@ namespace Assets.Scripts.Game.Weapons
             bullet.transform.LookAt(direction, Vector3.up);
             bullet.SetActive(true);
         }
+        public void FireBulletLookat(Vector3 start, Vector3 direction, float damage, float speed, float bulletLifetime)
+        {
+            GameObject bullet = GetBullet(out int index);
+            _bulletData[index].Lifetime = bulletLifetime;
+            _bulletData[index].Damage = damage;
+            _bulletData[index].Speed = speed;
+            bullet.transform.position = start;
+            bullet.transform.LookAt(direction, Vector3.up);
+            bullet.SetActive(true);
+        }
+
+
         GameObject GetBullet(out int index)
         {
             int i = 0;
