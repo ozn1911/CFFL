@@ -12,5 +12,8 @@ namespace Assets.Scripts.Game.Weapons
         public float BulletSpeed;
         public float BulletLifetime;
         public float FireRate;
+        public uint MaxAmmo;
+        public uint ClipAmmo;
+        public int ReloadTicks;
     }
 }

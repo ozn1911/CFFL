@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using System;
+using System.Threading.Tasks;
 
 namespace Assets.Scripts.Game.Weapons
 {
@@ -10,6 +11,9 @@ namespace Assets.Scripts.Game.Weapons
         public float Speed;
         public float Damage;
         public float Lifetime;
+        public bool GetDisabledOnHit = true;
+#nullable enable
+        public TrailRenderer? trail;
 
         public void SetStats(float speed, float damage)
         {
@@ -26,16 +30,17 @@ namespace Assets.Scripts.Game.Weapons
             else
                 gameObject.SetActive(false);
         }
-        //private void OnCollisionEnter(Collision collision)
-        //{
-        //    collision.gameObject.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
-        //    gameObject.SetActive(false);
-        //}
         private void OnTriggerEnter(Collider other)
         {
-            gameObject.SetActive(false);
             other.gameObject.SendMessage("TakeDamage", Damage, SendMessageOptions.DontRequireReceiver);
+            if(GetDisabledOnHit)
+                gameObject.SetActive(false);
         }
 
+        private void OnDisable()
+        {
+            if(trail != null)
+                trail.Clear();
+        }
     }
 }

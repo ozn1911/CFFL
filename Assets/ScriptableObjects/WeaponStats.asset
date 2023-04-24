@@ -18,3 +18,14 @@ MonoBehaviour:
     BulletSpeed: 1
     BulletLifetime: 5
     FireRate: 0
+    MaxAmmo: 4294967295
+    ClipAmmo: 4294967295
+    ReloadTicks: 0
+  - WeaponName: pistol
+    BulletDamage: 10
+    BulletSpeed: 1
+    BulletLifetime: 5
+    FireRate: 0.5
+    MaxAmmo: 60
+    ClipAmmo: 6
+    ReloadTicks: 30
