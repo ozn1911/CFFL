@@ -11,8 +11,10 @@ namespace Assets.Scripts.Game.Weapons
         private WeaponsEnum _currentWeapon;
         [SerializeField]
         private GameObject[] _weapons;
+        [SerializeField]
+        private List<int> _ignoreWeapons;
         public uint[] Ammonution;
-        public uint[] AmmoClip;
+        private uint[] _ammoClip;
         float lastfire;
         private int _reloadTicks = 0;
         private WeaponStructure[] _weaponStructures;
@@ -48,7 +50,7 @@ namespace Assets.Scripts.Game.Weapons
             {
                 _weaponStructures = new WeaponStructure[_weapons.Length];
                 Ammonution = new uint[_weapons.Length];
-                AmmoClip = new uint[_weapons.Length];
+                _ammoClip = new uint[_weapons.Length];
                 for (int i = 0; i < _weapons.Length; i++)
                 {
                     _weaponStructures[i] = _weapons[i].GetComponent<WeaponStructure>();
@@ -101,10 +103,10 @@ namespace Assets.Scripts.Game.Weapons
             if (mousefire)
                 if (lastfire + wpStats[((int)_currentWeapon)].FireRate < Time.time)
                 {
-                    if (AmmoClip[((int)_currentWeapon)] > 0)
+                    if (_ammoClip[((int)_currentWeapon)] > 0)
                     {
                         lastfire = Time.time;
-                        AmmoClip[((int)_currentWeapon)]--;
+                        _ammoClip[((int)_currentWeapon)]--;
                         WeaponFire();
                     }
                     else
@@ -124,10 +126,18 @@ namespace Assets.Scripts.Game.Weapons
         #region Weapon things
         public void WeapSwitch(int swtch)
         {
+            if (reloadSliderExistence)
+                reloadSlider.gameObject.SetActive(false);
+
+
             _reloadTicks = -1;
             _weapons[((int)_currentWeapon)].SetActive(false);
             Calculate(swtch);
             _weapons[((int)_currentWeapon)].SetActive(true);
+            if(_ignoreWeapons.Contains(((int)_currentWeapon)))
+            {
+                WeapSwitch(swtch > 0 ? 1 : -1);
+            }
 
             void Calculate(int swtch)
             {
@@ -189,17 +199,17 @@ namespace Assets.Scripts.Game.Weapons
         {
             Weapon[] wpStats = WeaponStats.instance.Weapons;
             uint clipAmmo = wpStats[clip].ClipAmmo;
-            uint preclipReq = clipAmmo - AmmoClip[clip];
+            uint preclipReq = clipAmmo - _ammoClip[clip];
             if (Ammonution[clip] >= clipAmmo)
             {
                 Ammonution[clip] -= preclipReq;
-                AmmoClip[clip] += preclipReq;
+                _ammoClip[clip] += preclipReq;
             }
             else
             {
                 uint preMinus = Ammonution[clip];
                 Ammonution[clip] = 0;
-                AmmoClip[clip] += preMinus;
+                _ammoClip[clip] += preMinus;
             }
         }
 

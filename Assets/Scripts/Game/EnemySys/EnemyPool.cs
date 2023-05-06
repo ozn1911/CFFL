@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Assets.Scripts.EnemyPool
+namespace Assets.Scripts.Game.EnemySys
 {
     public class EnemyPool : MonoBehaviour
     {
@@ -23,9 +23,9 @@ namespace Assets.Scripts.EnemyPool
             {
                 if ((_enemyPool[i] == null))
                 {
-                    GameObject bullet = Instantiate(_enemyTemplate);
-                    bullet.SetActive(false);
-                    _enemyPool[i] = bullet;
+                    GameObject Enemy = Instantiate(_enemyTemplate);
+                    Enemy.SetActive(false);
+                    _enemyPool[i] = Enemy;
                 }
             }
         }
@@ -39,7 +39,7 @@ namespace Assets.Scripts.EnemyPool
                 i++;
                 if (i == PoolSize)
                 {
-                    Debug.LogError("_enemyPool is all used up, you need to incerase bullet pool");
+                    Debug.LogError("_enemyPool is all used up, you need to incerase the pool");
                     goto escape;
                 }
             }

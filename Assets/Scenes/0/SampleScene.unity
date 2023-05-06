@@ -2171,8 +2171,8 @@ MonoBehaviour:
   - {fileID: 1092764305}
   - {fileID: 2130417518}
   - {fileID: 330174743}
+  _ignoreWeapons: 
   Ammonution: 
-  AmmoClip: 
   reloadSlider: {fileID: 2006042949}
 --- !u!114 &1863484173
 MonoBehaviour:

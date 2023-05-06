@@ -13,6 +13,8 @@ namespace Assets.Scripts.Dialog
         public static DialogsData Data;
         public List<TextAsset> DialogJsons;
         public List<Story> DialogStory = new List<Story>();
+        public List<TextAsset> CutsceneDialogJsons;
+        public List<Story> CutsceneDialogStory = new List<Story>();
 
         public int a;
         public int b;
@@ -38,13 +40,19 @@ namespace Assets.Scripts.Dialog
         private void Awake()
         {
             Data = this;
-            DialogStory.Clear();
+            StoryListInitialize(DialogJsons,DialogStory);
+            StoryListInitialize(CutsceneDialogJsons,CutsceneDialogStory);
+        }
+
+        private void StoryListInitialize(List<TextAsset> Jsons, List<Story> Storylist)
+        {
+            Storylist.Clear();
             foreach (TextAsset str in DialogJsons)
             {
-                DialogStory.Add(new Story(str.text));
+                Storylist.Add(new Story(str.text));
             }
-            b = DialogJsons.Count;
-            a = DialogStory.Count;
+            b = Jsons.Count;
+            a = Storylist.Count;
         }
 #if UNITY_EDITOR
         private void OnEnable()
