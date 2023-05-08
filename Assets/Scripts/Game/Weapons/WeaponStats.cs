@@ -21,6 +21,7 @@ namespace Assets.Scripts.Game.Weapons
     public enum WeaponsEnum
     {
         DebugWeap,
-        pistol
+        pistol,
+        smg
     }
 }

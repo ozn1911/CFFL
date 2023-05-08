@@ -69,15 +69,20 @@ namespace Assets.Scripts.Dialog
         public Sprite Speaker;
         public Sprite Balloon;
         public string DialogText;
+        public float Time;
 
         public Dialog(string dialogName, Sprite speaker, Sprite balloon, string dialogText)
+        {
+            this = new Dialog(dialogName, speaker, balloon, dialogText, 4);
+        }
+        public Dialog(string dialogName, Sprite speaker, Sprite balloon, string dialogText, float time)
         {
             DialogName = dialogName;
             Speaker = speaker;
             Balloon = balloon;
             DialogText = dialogText;
+            Time = time;
         }
-
     }
     public enum DialogSpeaker
     {

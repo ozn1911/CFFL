@@ -37,3 +37,11 @@ MonoBehaviour:
     MaxAmmo: 300
     ClipAmmo: 30
     ReloadTicks: 30
+  - WeaponName: "Pompal\u0131"
+    BulletDamage: 5
+    BulletSpeed: 1
+    BulletLifetime: 5
+    FireRate: 0.7
+    MaxAmmo: 300
+    ClipAmmo: 4
+    ReloadTicks: 60
