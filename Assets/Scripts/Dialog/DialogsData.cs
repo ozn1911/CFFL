@@ -89,7 +89,7 @@ namespace Assets.Scripts.Dialog
         speaker1_0,
         speaker1_1,
         speaker1_2,
-        speaker2,
+        speaker2_0,
         none
     }
     public enum DialogBalloon

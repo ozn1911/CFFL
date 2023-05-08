@@ -58,7 +58,7 @@ namespace Assets.Scripts.Game.Weapons
             } 
             #endregion
         }
-
+        
 
 
         private void Update()

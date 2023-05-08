@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 22ee93be4c61ee34eadec60984809b1b, type: 3}
+  m_Name: SceneData
+  m_EditorClassIdentifier: 
+  SceneDatas:
+  - SceneName: First time Cutscene
+    SceneBuild: 2
+    Mode: 1
+    CData:
+      StoryCode: 1
+      song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
+      GoesToNextLevel: 0
+    SpecialCode: 0
+    system: {fileID: 0}
+  - SceneName: Tutorial
+    SceneBuild: 1
+    Mode: 0
+    CData:
+      StoryCode: 1
+      song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
+      GoesToNextLevel: 0
+    SpecialCode: 0
+    system: {fileID: 0}
+  SpecialDatas: []

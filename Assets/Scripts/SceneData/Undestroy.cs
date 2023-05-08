@@ -9,7 +9,7 @@ namespace Assets.Scripts.SceneData
 #nullable enable
         #region Instancing
         public static Undestroy? Instance;
-
+        SceneDataObject data => SceneDataObject.instance;
 
 
         private void Awake()
@@ -31,7 +31,23 @@ namespace Assets.Scripts.SceneData
         #endregion
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
-
+            if (mode == LoadSceneMode.Single)
+            {
+                SceneDataStruct scenedata = data.GetSceneDataStruct();
+                if(scenedata.system != null)
+                    Instantiate(scenedata.system);
+                switch (scenedata.Mode)
+                {
+                    case SceneMode.Game:
+                        break;
+                    case SceneMode.Cutscene:
+                        
+                        break;
+                    case SceneMode.special:
+                        break;
+                }
+            }
+            
         }
 
         private void OnDisable()

@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.SceneData;
+
 
 namespace Assets.Scripts.Main_Menu
 {
@@ -10,8 +12,9 @@ namespace Assets.Scripts.Main_Menu
         public void animEvent()
         {
             Debug.Log("aaaaaaaaaaa");
-            StartCoroutine(LoadScene());
+            //StartCoroutine(LoadScene());
             //SceneManager.LoadScene("Desert",LoadSceneMode.Single);
+            SceneLoader.instance.StartGameButton();
         }
 
         IEnumerator LoadScene()

@@ -1,0 +1,1 @@
+﻿{"inkVersion":21,"root":[["^WELCOME TO OUR NEW SHOW ","#","^Speaker:speaker1_1 ","/#","#","^Balloon:none ","/#","#","^Time:6","/#","\n",{"*":"0.c-0","flg":24},{"c-0":[{"->":"a1"},"\n",{"->":"0.g-0"},{"#f":5}],"g-0":["done",{"#f":5}]}],"done",{"a1":["^test ","#","^Speaker:speaker2_0 ","/#","#","^Balloon:none ","/#","#","^Time:2","/#","\n","end",{"#f":1}],"#f":1}],"listDefs":{}}
