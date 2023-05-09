@@ -73,7 +73,12 @@ namespace Assets.Scripts.SceneData
     [Serializable]
     public struct GameData
     {
-        
+        public Wave[] Waves;
+    }
+    [Serializable]
+    public struct Wave
+    {
+
     }
 
     public enum SceneMode

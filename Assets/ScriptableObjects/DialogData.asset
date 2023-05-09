@@ -15,8 +15,9 @@ MonoBehaviour:
   DialogJsons:
   - {fileID: 4900000, guid: b02ddab0450efb3419d5df448d171870, type: 3}
   - {fileID: 4900000, guid: 81483bbdabaddf149a1eb5beed2d6484, type: 3}
-  CutsceneDialogJsons: []
-  a: 1
+  CutsceneDialogJsons:
+  - {fileID: 4900000, guid: 81483bbdabaddf149a1eb5beed2d6484, type: 3}
+  a: 2
   b: 0
   SpeakerSprite:
   - {fileID: -623335152, guid: c02c91b709b90bb40ba58f3a11137e54, type: 3}

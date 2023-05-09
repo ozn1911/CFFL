@@ -2288,13 +2288,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4614bcb43ec367e47bc827286a551624, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentWeapon: 0
+  _currentWeapon: 1
   _weapons:
   - {fileID: 1092764305}
   - {fileID: 2130417518}
   - {fileID: 330174743}
   - {fileID: 474168394}
-  _ignoreWeapons: 
+  _ignoreWeapons: 00000000
   Ammonution: 
   reloadSlider: {fileID: 2006042949}
 --- !u!114 &1863484173

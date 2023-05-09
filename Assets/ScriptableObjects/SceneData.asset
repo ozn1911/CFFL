@@ -16,6 +16,8 @@ MonoBehaviour:
   - SceneName: First time Cutscene
     SceneBuild: 2
     Mode: 1
+    GData:
+      Waves: []
     CData:
       StoryCode: 1
       song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
@@ -25,6 +27,8 @@ MonoBehaviour:
   - SceneName: Tutorial
     SceneBuild: 1
     Mode: 0
+    GData:
+      Waves: []
     CData:
       StoryCode: 1
       song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
