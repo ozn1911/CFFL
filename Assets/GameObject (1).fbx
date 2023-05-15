@@ -8,11 +8,11 @@ FBXHeaderExtension:  {
 		Version: 1000
 		Year: 2023
 		Month: 5
-		Day: 2
-		Hour: 13
-		Minute: 58
-		Second: 49
-		Millisecond: 267
+		Day: 15
+		Hour: 23
+		Minute: 15
+		Second: 6
+		Millisecond: 659
 	}
 	Creator: "FBX SDK/FBX Plugins version 2020.3.2"
 	SceneInfo: "SceneInfo::GlobalInfo", "UserData" {
@@ -28,8 +28,8 @@ FBXHeaderExtension:  {
 			Comment: ""
 		}
 		Properties70:  {
-			P: "DocumentUrl", "KString", "Url", "", "C:\Users\user\CFFL\CFFL\Assets\as89v88y_GameObject (1).fbx"
-			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\user\CFFL\CFFL\Assets\as89v88y_GameObject (1).fbx"
+			P: "DocumentUrl", "KString", "Url", "", "C:\Users\user\CFFL\CFFL\Assets\45uk0hvx_GameObject (1).fbx"
+			P: "SrcDocumentUrl", "KString", "Url", "", "C:\Users\user\CFFL\CFFL\Assets\45uk0hvx_GameObject (1).fbx"
 			P: "Original", "Compound", "", ""
 			P: "Original|ApplicationVendor", "KString", "", "", ""
 			P: "Original|ApplicationName", "KString", "", "", "Unity FBX Exporter"
@@ -75,7 +75,7 @@ GlobalSettings:  {
 
 Documents:  {
 	Count: 1
-	Document: 2062696685408, "Scene", "Scene" {
+	Document: 2052264608880, "Scene", "Scene" {
 		Properties70:  {
 			P: "SourceObject", "object", "", ""
 			P: "ActiveAnimStackName", "KString", "", "", ""
@@ -254,7 +254,7 @@ Definitions:  {
 ;------------------------------------------------------------------
 
 Objects:  {
-	NodeAttribute: 2062699872032, "NodeAttribute::Directional Light", "Light" {
+	NodeAttribute: 2052957698336, "NodeAttribute::Directional Light", "Light" {
 		Properties70:  {
 			P: "Color", "Color", "", "A",1,0.95686274766922,0.839215695858002
 			P: "LightType", "enum", "", "",1
@@ -265,7 +265,7 @@ Objects:  {
 		TypeFlags: "Light"
 		GeometryVersion: 124
 	}
-	Geometry: 2062699789664, "Geometry::Scene", "Mesh" {
+	Geometry: 2052961533472, "Geometry::Scene", "Mesh" {
 		Vertices: *363 {
 			a: -500,-1.11022302462516e-14,500,-400,-1.11022302462516e-14,500,-300,-1.11022302462516e-14,500,-199.999988079071,-1.11022302462516e-14,500,-99.9999940395355,-1.11022302462516e-14,500,-0,-1.11022302462516e-14,500,100.000023841858,-1.11022302462516e-14,500,199.999988079071,-1.11022302462516e-14,500,300,-1.11022302462516e-14,500,400.000047683716,-1.11022302462516e-14,500,500,-1.11022302462516e-14,500,-500,-8.88178432935015e-15,400,-400,-8.88178432935015e-15,400,-300,-8.88178432935015e-15,400,-199.999988079071,-8.88178432935015e-15,400,-99.9999940395355,-8.88178432935015e-15,400,-0,-8.88178432935015e-15,400,100.000023841858,-8.88178432935015e-15,400,199.999988079071,-8.88178432935015e-15,400,300,-8.88178432935015e-15,400,400.000047683716,-8.88178432935015e-15,400,500,-8.88178432935015e-15,400,-500,-6.66133841244874e-15,300,-400,-6.66133841244874e-15,300,-300,-6.66133841244874e-15,300,-199.999988079071,-6.66133841244874e-15,300,-99.9999940395355,-6.66133841244874e-15,300,-0,-6.66133841244874e-15,300,100.000023841858,-6.66133841244874e-15,300,199.999988079071,-6.66133841244874e-15,300,300,-6.66133841244874e-15,300,400.000047683716,-6.66133841244874e-15,300,500,-6.66133841244874e-15,300,-500,-4.44089183380283e-15,199.999988079071,-400,-4.44089183380283e-15,199.999988079071,-300,-4.44089183380283e-15,199.999988079071,-199.999988079071,-4.44089183380283e-15,199.999988079071,-99.9999940395355,-4.44089183380283e-15,199.999988079071,-0,-4.44089183380283e-15,199.999988079071,100.000023841858,-4.44089183380283e-15,199.999988079071,199.999988079071,-4.44089183380283e-15,199.999988079071,300,-4.44089183380283e-15,199.999988079071,400.000047683716,-4.44089183380283e-15,199.999988079071,500,-4.44089183380283e-15,199.999988079071,-500,-2.22044591690142e-15,99.9999940395355,-400,-2.22044591690142e-15,99.9999940395355,-300,-2.22044591690142e-15,99.9999940395355,-199.999988079071,-2.22044591690142e-15,99.9999940395355,-99.9999940395355,-2.22044591690142e-15,99.9999940395355,-0,-2.22044591690142e-15,99.9999940395355,100.000023841858,-2.22044591690142e-15,99.9999940395355,
 199.999988079071,-2.22044591690142e-15,99.9999940395355,300,-2.22044591690142e-15,99.9999940395355,400.000047683716,-2.22044591690142e-15,99.9999940395355,500,-2.22044591690142e-15,99.9999940395355,-500,0,0,-400,0,0,-300,0,0,-199.999988079071,0,0,-99.9999940395355,0,0,-0,0,0,100.000023841858,0,0,199.999988079071,0,0,300,0,0,400.000047683716,0,0,500,0,0,-500,2.22044657864591e-15,-100.000023841858,-400,2.22044657864591e-15,-100.000023841858,-300,2.22044657864591e-15,-100.000023841858,-199.999988079071,2.22044657864591e-15,-100.000023841858,-99.9999940395355,2.22044657864591e-15,-100.000023841858,-0,2.22044657864591e-15,-100.000023841858,100.000023841858,2.22044657864591e-15,-100.000023841858,199.999988079071,2.22044657864591e-15,-100.000023841858,300,2.22044657864591e-15,-100.000023841858,400.000047683716,2.22044657864591e-15,-100.000023841858,500,2.22044657864591e-15,-100.000023841858,-500,4.44089183380283e-15,-199.999988079071,-400,4.44089183380283e-15,-199.999988079071,-300,4.44089183380283e-15,-199.999988079071,-199.999988079071,4.44089183380283e-15,-199.999988079071,-99.9999940395355,4.44089183380283e-15,-199.999988079071,-0,4.44089183380283e-15,-199.999988079071,100.000023841858,4.44089183380283e-15,-199.999988079071,199.999988079071,4.44089183380283e-15,-199.999988079071,300,4.44089183380283e-15,-199.999988079071,400.000047683716,4.44089183380283e-15,-199.999988079071,500,4.44089183380283e-15,-199.999988079071,-500,6.66133841244874e-15,-300,-400,6.66133841244874e-15,-300,-300,6.66133841244874e-15,-300,-199.999988079071,6.66133841244874e-15,-300,-99.9999940395355,6.66133841244874e-15,-300,-0,6.66133841244874e-15,-300,100.000023841858,6.66133841244874e-15,-300,199.999988079071,6.66133841244874e-15,-300,300,6.66133841244874e-15,-300,400.000047683716,6.66133841244874e-15,-300,500,6.66133841244874e-15,-300,-500,8.88178499109464e-15,-400.000047683716,-400,8.88178499109464e-15,-400.000047683716,-300,8.88178499109464e-15,-400.000047683716,-199.999988079071,8.88178499109464e-15,-400.000047683716,-99.9999940395355,8.88178499109464e-15,-400.000047683716,
@@ -364,7 +364,7 @@ Objects:  {
 			}
 		}
 	}
-	Geometry: 2062699778912, "Geometry::Scene", "Mesh" {
+	Geometry: 2052961508384, "Geometry::Scene", "Mesh" {
 		Vertices: *24 {
 			a: -50,-50,50,50,-50,50,-50,50,50,50,50,50,-50,50,-50,50,50,-50,-50,-50,-50,50,-50,-50
 		} 
@@ -473,7 +473,7 @@ Objects:  {
 			}
 		}
 	}
-	Model: 2062578749840, "Model::GameObject__1_", "Null" {
+	Model: 2038738610272, "Model::GameObject__1_", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -484,7 +484,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578743840, "Model::Directional_Light", "Light" {
+	Model: 2038738618272, "Model::Directional_Light", "Light" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -499,7 +499,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578733840, "Model::GameObject", "Null" {
+	Model: 2038738616272, "Model::GameObject", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -511,7 +511,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578719840, "Model::zemin", "Mesh" {
+	Model: 2038738614272, "Model::zemin", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -525,7 +525,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062578751840, "Model::kasa", "Mesh" {
+	Model: 2050558082224, "Model::kasa", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -539,7 +539,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062578725840, "Model::shop", "Mesh" {
+	Model: 2050558064224, "Model::shop", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -553,7 +553,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062578735840, "Model::trg_all", "Null" {
+	Model: 2050558096224, "Model::trg_all", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -564,7 +564,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578753840, "Model::itemTriggers", "Null" {
+	Model: 2050558104224, "Model::itemTriggers", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -575,7 +575,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578759840, "Model::trg_1", "Mesh" {
+	Model: 2052180430464, "Model::trg_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -589,7 +589,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062578761840, "Model::GameObject_1", "Null" {
+	Model: 2052180448464, "Model::GameObject_1", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -601,7 +601,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578529840, "Model::Canvas", "Null" {
+	Model: 2052180432464, "Model::Canvas", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -615,7 +615,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578499840, "Model::Text__TMP_", "Null" {
+	Model: 2040540605712, "Model::Text__TMP_", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -628,7 +628,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062578501840, "Model::trg_2", "Mesh" {
+	Model: 2040540589712, "Model::trg_2", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -642,7 +642,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062578583840, "Model::GameObject_2", "Null" {
+	Model: 2040540607712, "Model::GameObject_2", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -654,7 +654,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693098944, "Model::Canvas_1", "Null" {
+	Model: 2052261457520, "Model::Canvas_1", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -668,7 +668,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693076944, "Model::Text__TMP__1", "Null" {
+	Model: 2052261389520, "Model::Text__TMP__1", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -681,7 +681,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693090944, "Model::trg_3", "Mesh" {
+	Model: 2052261385520, "Model::trg_3", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -695,7 +695,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693078944, "Model::GameObject_3", "Null" {
+	Model: 2052271794016, "Model::GameObject_3", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -707,7 +707,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693124944, "Model::Canvas_2", "Null" {
+	Model: 2052271766016, "Model::Canvas_2", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -721,7 +721,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693110944, "Model::Text__TMP__2", "Null" {
+	Model: 2052271802016, "Model::Text__TMP__2", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -734,7 +734,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693112944, "Model::trg_4", "Mesh" {
+	Model: 2040536792832, "Model::trg_4", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -748,7 +748,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693182944, "Model::GameObject_4", "Null" {
+	Model: 2040536798832, "Model::GameObject_4", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -760,7 +760,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693166944, "Model::Canvas_3", "Null" {
+	Model: 2050550759024, "Model::Canvas_3", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -774,7 +774,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693158944, "Model::Text__TMP__3", "Null" {
+	Model: 2048839863760, "Model::Text__TMP__3", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -787,7 +787,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693270944, "Model::trg_shop", "Mesh" {
+	Model: 2052961274272, "Model::trg_shop", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -801,7 +801,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693274944, "Model::Duvarlar", "Null" {
+	Model: 2052961244272, "Model::Duvarlar", "Null" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -813,7 +813,7 @@ Objects:  {
 		Shading: Y
 		Culling: "CullingOff"
 	}
-	Model: 2062693290944, "Model::duvar_1", "Mesh" {
+	Model: 2052961262272, "Model::duvar_1", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -828,7 +828,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693260944, "Model::duvar_2", "Mesh" {
+	Model: 2052961254272, "Model::duvar_2", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -843,7 +843,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693314944, "Model::duvar_3", "Mesh" {
+	Model: 2052961260272, "Model::duvar_3", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -858,7 +858,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693316944, "Model::duvar_4", "Mesh" {
+	Model: 2052961276272, "Model::duvar_4", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -873,7 +873,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Model: 2062693292944, "Model::duvar_5", "Mesh" {
+	Model: 2052961252272, "Model::duvar_5", "Mesh" {
 		Version: 232
 		Properties70:  {
 			P: "RotationOrder", "enum", "", "",4
@@ -888,7 +888,7 @@ Objects:  {
 		Shading: W
 		Culling: "CullingOff"
 	}
-	Material: 2062576286512, "Material::Floor", "" {
+	Material: 2053069405904, "Material::Floor", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -901,7 +901,7 @@ Objects:  {
 			P: "Opacity", "double", "Number", "",1
 		}
 	}
-	Material: 2062576298512, "Material::Default_Material", "" {
+	Material: 2052270336240, "Material::Default_Material", "" {
 		Version: 102
 		ShadingModel: "lambert"
 		MultiLayer: 0
@@ -922,178 +922,178 @@ Objects:  {
 Connections:  {
 	
 	;Model::GameObject__1_, Model::RootNode
-	C: "OO",2062578749840,0
+	C: "OO",2038738610272,0
 	
 	;Model::Directional_Light, Model::GameObject__1_
-	C: "OO",2062578743840,2062578749840
+	C: "OO",2038738618272,2038738610272
 	
 	;Model::GameObject, Model::GameObject__1_
-	C: "OO",2062578733840,2062578749840
+	C: "OO",2038738616272,2038738610272
 	
 	;Model::Duvarlar, Model::GameObject__1_
-	C: "OO",2062693274944,2062578749840
+	C: "OO",2052961244272,2038738610272
 	
 	;NodeAttribute::Directional Light, Model::Directional_Light
-	C: "OO",2062699872032,2062578743840
+	C: "OO",2052957698336,2038738618272
 	
 	;Model::zemin, Model::GameObject
-	C: "OO",2062578719840,2062578733840
+	C: "OO",2038738614272,2038738616272
 	
 	;Model::kasa, Model::GameObject
-	C: "OO",2062578751840,2062578733840
+	C: "OO",2050558082224,2038738616272
 	
 	;Model::shop, Model::GameObject
-	C: "OO",2062578725840,2062578733840
+	C: "OO",2050558064224,2038738616272
 	
 	;Model::trg_all, Model::GameObject
-	C: "OO",2062578735840,2062578733840
+	C: "OO",2050558096224,2038738616272
 	
 	;Material::Floor, Model::zemin
-	C: "OO",2062576286512,2062578719840
+	C: "OO",2053069405904,2038738614272
 	
 	;Geometry::Scene, Model::zemin
-	C: "OO",2062699789664,2062578719840
+	C: "OO",2052961533472,2038738614272
 	
 	;Material::Default_Material, Model::kasa
-	C: "OO",2062576298512,2062578751840
+	C: "OO",2052270336240,2050558082224
 	
 	;Geometry::Scene, Model::kasa
-	C: "OO",2062699778912,2062578751840
+	C: "OO",2052961508384,2050558082224
 	
 	;Material::Default_Material, Model::shop
-	C: "OO",2062576298512,2062578725840
+	C: "OO",2052270336240,2050558064224
 	
 	;Geometry::Scene, Model::shop
-	C: "OO",2062699778912,2062578725840
+	C: "OO",2052961508384,2050558064224
 	
 	;Model::itemTriggers, Model::trg_all
-	C: "OO",2062578753840,2062578735840
+	C: "OO",2050558104224,2050558096224
 	
 	;Model::trg_shop, Model::trg_all
-	C: "OO",2062693270944,2062578735840
+	C: "OO",2052961274272,2050558096224
 	
 	;Model::trg_1, Model::itemTriggers
-	C: "OO",2062578759840,2062578753840
+	C: "OO",2052180430464,2050558104224
 	
 	;Model::trg_2, Model::itemTriggers
-	C: "OO",2062578501840,2062578753840
+	C: "OO",2040540589712,2050558104224
 	
 	;Model::trg_3, Model::itemTriggers
-	C: "OO",2062693090944,2062578753840
+	C: "OO",2052261385520,2050558104224
 	
 	;Model::trg_4, Model::itemTriggers
-	C: "OO",2062693112944,2062578753840
+	C: "OO",2040536792832,2050558104224
 	
 	;Model::GameObject_1, Model::trg_1
-	C: "OO",2062578761840,2062578759840
+	C: "OO",2052180448464,2052180430464
 	
 	;Material::Default_Material, Model::trg_1
-	C: "OO",2062576298512,2062578759840
+	C: "OO",2052270336240,2052180430464
 	
 	;Geometry::Scene, Model::trg_1
-	C: "OO",2062699778912,2062578759840
+	C: "OO",2052961508384,2052180430464
 	
 	;Model::Canvas, Model::GameObject_1
-	C: "OO",2062578529840,2062578761840
+	C: "OO",2052180432464,2052180448464
 	
 	;Model::Text__TMP_, Model::Canvas
-	C: "OO",2062578499840,2062578529840
+	C: "OO",2040540605712,2052180432464
 	
 	;Model::GameObject_2, Model::trg_2
-	C: "OO",2062578583840,2062578501840
+	C: "OO",2040540607712,2040540589712
 	
 	;Material::Default_Material, Model::trg_2
-	C: "OO",2062576298512,2062578501840
+	C: "OO",2052270336240,2040540589712
 	
 	;Geometry::Scene, Model::trg_2
-	C: "OO",2062699778912,2062578501840
+	C: "OO",2052961508384,2040540589712
 	
 	;Model::Canvas_1, Model::GameObject_2
-	C: "OO",2062693098944,2062578583840
+	C: "OO",2052261457520,2040540607712
 	
 	;Model::Text__TMP__1, Model::Canvas_1
-	C: "OO",2062693076944,2062693098944
+	C: "OO",2052261389520,2052261457520
 	
 	;Model::GameObject_3, Model::trg_3
-	C: "OO",2062693078944,2062693090944
+	C: "OO",2052271794016,2052261385520
 	
 	;Material::Default_Material, Model::trg_3
-	C: "OO",2062576298512,2062693090944
+	C: "OO",2052270336240,2052261385520
 	
 	;Geometry::Scene, Model::trg_3
-	C: "OO",2062699778912,2062693090944
+	C: "OO",2052961508384,2052261385520
 	
 	;Model::Canvas_2, Model::GameObject_3
-	C: "OO",2062693124944,2062693078944
+	C: "OO",2052271766016,2052271794016
 	
 	;Model::Text__TMP__2, Model::Canvas_2
-	C: "OO",2062693110944,2062693124944
+	C: "OO",2052271802016,2052271766016
 	
 	;Model::GameObject_4, Model::trg_4
-	C: "OO",2062693182944,2062693112944
+	C: "OO",2040536798832,2040536792832
 	
 	;Material::Default_Material, Model::trg_4
-	C: "OO",2062576298512,2062693112944
+	C: "OO",2052270336240,2040536792832
 	
 	;Geometry::Scene, Model::trg_4
-	C: "OO",2062699778912,2062693112944
+	C: "OO",2052961508384,2040536792832
 	
 	;Model::Canvas_3, Model::GameObject_4
-	C: "OO",2062693166944,2062693182944
+	C: "OO",2050550759024,2040536798832
 	
 	;Model::Text__TMP__3, Model::Canvas_3
-	C: "OO",2062693158944,2062693166944
+	C: "OO",2048839863760,2050550759024
 	
 	;Material::Default_Material, Model::trg_shop
-	C: "OO",2062576298512,2062693270944
+	C: "OO",2052270336240,2052961274272
 	
 	;Geometry::Scene, Model::trg_shop
-	C: "OO",2062699778912,2062693270944
+	C: "OO",2052961508384,2052961274272
 	
 	;Model::duvar_1, Model::Duvarlar
-	C: "OO",2062693290944,2062693274944
+	C: "OO",2052961262272,2052961244272
 	
 	;Model::duvar_2, Model::Duvarlar
-	C: "OO",2062693260944,2062693274944
+	C: "OO",2052961254272,2052961244272
 	
 	;Model::duvar_3, Model::Duvarlar
-	C: "OO",2062693314944,2062693274944
+	C: "OO",2052961260272,2052961244272
 	
 	;Model::duvar_4, Model::Duvarlar
-	C: "OO",2062693316944,2062693274944
+	C: "OO",2052961276272,2052961244272
 	
 	;Model::duvar_5, Model::Duvarlar
-	C: "OO",2062693292944,2062693274944
+	C: "OO",2052961252272,2052961244272
 	
 	;Material::Floor, Model::duvar_1
-	C: "OO",2062576286512,2062693290944
+	C: "OO",2053069405904,2052961262272
 	
 	;Geometry::Scene, Model::duvar_1
-	C: "OO",2062699789664,2062693290944
+	C: "OO",2052961533472,2052961262272
 	
 	;Material::Floor, Model::duvar_2
-	C: "OO",2062576286512,2062693260944
+	C: "OO",2053069405904,2052961254272
 	
 	;Geometry::Scene, Model::duvar_2
-	C: "OO",2062699789664,2062693260944
+	C: "OO",2052961533472,2052961254272
 	
 	;Material::Floor, Model::duvar_3
-	C: "OO",2062576286512,2062693314944
+	C: "OO",2053069405904,2052961260272
 	
 	;Geometry::Scene, Model::duvar_3
-	C: "OO",2062699789664,2062693314944
+	C: "OO",2052961533472,2052961260272
 	
 	;Material::Floor, Model::duvar_4
-	C: "OO",2062576286512,2062693316944
+	C: "OO",2053069405904,2052961276272
 	
 	;Geometry::Scene, Model::duvar_4
-	C: "OO",2062699789664,2062693316944
+	C: "OO",2052961533472,2052961276272
 	
 	;Material::Floor, Model::duvar_5
-	C: "OO",2062576286512,2062693292944
+	C: "OO",2053069405904,2052961252272
 	
 	;Geometry::Scene, Model::duvar_5
-	C: "OO",2062699789664,2062693292944
+	C: "OO",2052961533472,2052961252272
 }
 ;Takes section
 ;----------------------------------------------------

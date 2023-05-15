@@ -69,7 +69,7 @@ namespace Assets.Scripts.Dialog
         }
         public void BalloonUpdate()
         {
-            for (int i = 1; i >= 0; i--)
+            for (int i = BalloonScripts.Length - 2; i >= 0; i--)
             {
                 BalloonScripts[i + 1].SetBalloonDiag(BalloonScripts[i].GetBalloonDiag());
             }

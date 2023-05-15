@@ -15,6 +15,7 @@ namespace Assets.Scripts.ScenePrefCodes
         {
 
             yield return WaitCompletion();
+
             Debug.Log("completed");
         }
     }
