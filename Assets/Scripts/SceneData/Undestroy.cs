@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System;
 
 namespace Assets.Scripts.SceneData
 {
@@ -10,7 +11,7 @@ namespace Assets.Scripts.SceneData
         #region Instancing
         public static Undestroy? Instance;
         SceneDataObject data => SceneDataObject.instance;
-
+        public static event EventHandler SceneEnd;
 
         private void Awake()
         {
@@ -26,6 +27,7 @@ namespace Assets.Scripts.SceneData
         }
         private void OnEnable()
         {
+            SceneEnd += WhenSceneEnd;
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
         #endregion
@@ -53,9 +55,10 @@ namespace Assets.Scripts.SceneData
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
+            SceneEnd -= WhenSceneEnd;
         }
 
-        public void GameStart()
+        public void WhenSceneEnd(object obj, EventArgs e)
         {
             
         }

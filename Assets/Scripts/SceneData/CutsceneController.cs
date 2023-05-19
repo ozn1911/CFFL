@@ -7,6 +7,7 @@ namespace Assets.Scripts.SceneData
 {
     public class CutsceneController : MonoBehaviour
     {
+        
         [SerializeField]
         DialogRunnerV2 _dialog;
         [SerializeField]

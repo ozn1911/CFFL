@@ -6,6 +6,7 @@ namespace Assets.Scripts.ScenePrefCodes
 {
     public class TutorialSceneCode : SceneSequenceBehaviour
     {
+        
         private void Awake()
         {
             Sequence = TutorialSequence();

@@ -4,6 +4,7 @@ using Ink.Runtime;
 using Assets.Scripts.Dialog;
 using System;
 using UnityEngine.SceneManagement;
+using Assets.Scripts.Game.EnemySys;
 
 namespace Assets.Scripts.SceneData
 {
@@ -78,7 +79,13 @@ namespace Assets.Scripts.SceneData
     [Serializable]
     public struct Wave
     {
-        
+        public s_EnemyWave[] Enemies;
+    }
+    [Serializable]
+    public struct s_EnemyWave
+    {
+        public Enemy Enemy;
+        public int Count;
     }
 
     public enum SceneMode

@@ -35,4 +35,7 @@ MonoBehaviour:
       GoesToNextLevel: 0
     SpecialCode: 0
     system: {fileID: 0}
-  SpecialDatas: []
+  SpecialDatas:
+  - SceneName: 
+    SceneBuild: 0
+    Prefab: {fileID: 0}
