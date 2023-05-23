@@ -8,6 +8,8 @@ TagManager:
   - OMAR Object
   - SeedSlot
   - Growable
+  - Dialog
+  - System
   layers:
   - Default
   - TransparentFX

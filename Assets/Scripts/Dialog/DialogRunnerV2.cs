@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using Ink.Runtime;
 using System;
@@ -15,26 +16,36 @@ namespace Assets.Scripts.Dialog
         Story diag;
         int currentBalloon = 0;
 
+        bool diag_or_no_diag = true;
+        List<Story> waitingDiags = new List<Story>();
+
         private void Awake()
         {
             BalloonClose(0);
+            DialogFinish += DiagFinish;
+            
+        }
+        private void Update()
+        {
+            if(Input.GetButtonDown("Cancel"))
+            {
+                TestDiag();
+            }
         }
 
 
         [ContextMenu("TestDiag")]
         public void TestDiag()
         {
-            StartCoroutine(Dialog(DialogsData.Data.DialogStory[0]));
+            DialogCall(DialogsData.Data.DialogStory[0]);
         }
 
 
         IEnumerator Dialog(Story story)
         {
+            diag_or_no_diag = false;
             story.ResetState();
-            if (!story.canContinue)
-            {
-                story.state.GoToStart();
-            }
+            story.state.GoToStart();
 
             while (story.canContinue)
             {
@@ -58,9 +69,23 @@ namespace Assets.Scripts.Dialog
             currentBalloon = 0;
             BalloonClose(currentBalloon);
             yield return new WaitForSeconds(0);
-            DialogFinish(this,EventArgs.Empty);
+            DialogFinish(this, EventArgs.Empty);
         }
 
+        private void DiagFinish(object a, EventArgs e)
+        {
+            if (waitingDiags.Count == 0)
+            {
+                diag_or_no_diag = true;
+            }
+            else
+            {
+                diag_or_no_diag = true;
+                DialogCall(waitingDiags[0]);
+                waitingDiags.RemoveAt(0);
+                
+            }
+        }
 
         public void BalloonAdd(Story story)
         {
@@ -85,11 +110,21 @@ namespace Assets.Scripts.Dialog
 
         public void DialogCall(Story story)
         {
-            StartCoroutine(Dialog(story));
+            if (diag_or_no_diag)
+                StartCoroutine(Dialog(story));
+            else
+                waitingDiags.Add(story);
         }
         public void DialogCall(int i)
         {
-            StartCoroutine(Dialog(DialogsData.Data.DialogStory[i]));
+            if (diag_or_no_diag)
+            {
+                StartCoroutine(Dialog(DialogsData.Data.DialogStory[i]));
+            }
+            else
+            {
+                waitingDiags.Add(DialogsData.Data.DialogStory[i]);
+            }
         }
 
 

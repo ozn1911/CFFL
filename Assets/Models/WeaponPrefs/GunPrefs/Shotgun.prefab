@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PoolSize: 10
   _bulletPool: []
-  _bulletTemplate: {fileID: 0}
+  _bulletTemplate: {fileID: 8792940572824200966, guid: 6b68d5e52d5894c4ca96adf3173d24f1, type: 3}
 --- !u!114 &7021615183982834540
 MonoBehaviour:
   m_ObjectHideFlags: 0
