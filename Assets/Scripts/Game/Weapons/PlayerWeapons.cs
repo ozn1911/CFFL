@@ -243,7 +243,7 @@ namespace Assets.Scripts.Game.Weapons
                 Ammonution[temp] = WeaponStats.instance.Weapons[temp].MaxAmmo;
             }
 
-            _ignoreWeapons.Remove(weapon);
+            _ignoreWeapons.Remove(temp);
         }
         public struct s_GetAmmo
         {
