@@ -6,6 +6,11 @@ namespace Assets.Scripts.ScenePrefCodes
     public class SceneSequenceBehaviour : MonoBehaviour
     {
         bool complete;
+        bool safety;
+        public bool Safety
+        {
+            get => safety;
+        }
         public IEnumerator Sequence;
         private void Start()
         {
@@ -22,11 +27,27 @@ namespace Assets.Scripts.ScenePrefCodes
         /// <returns></returns>
         public IEnumerator WaitCompletion()
         {
-            while (!complete)
+            if (!complete)
             {
-                yield return new WaitForSeconds(.5f);
+                while (!complete)
+                {
+                    yield return new WaitForSeconds(.5f);
+                }
+                complete = false;
             }
-            complete = false;
+            else
+            {
+                safety = true;
+            }
+        }
+        public bool SafetyChecked()
+        {
+            if(safety)
+            {
+                safety = false;
+                return true;
+            }
+            return false;
         }
 
     }

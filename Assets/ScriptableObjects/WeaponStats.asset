@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WeaponStats
   m_EditorClassIdentifier: 
   Weapons:
-  - WeaponName: debug stick
+  - WeaponName: DebugWeap
     BulletDamage: 1
     BulletSpeed: 1
     BulletLifetime: 5
@@ -37,7 +37,7 @@ MonoBehaviour:
     MaxAmmo: 300
     ClipAmmo: 30
     ReloadTicks: 30
-  - WeaponName: "Pompal\u0131"
+  - WeaponName: shotgun
     BulletDamage: 5
     BulletSpeed: 1
     BulletLifetime: 5

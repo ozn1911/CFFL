@@ -15,6 +15,13 @@ namespace Assets.Scripts.Game.Weapons
         {
             instance = this;
         }
+        private void OnValidate()
+        {
+            for(int i = 0; i < Weapons.Length; i++)
+            {
+                Weapons[i].WeaponName = ((WeaponsEnum)i).ToString();
+            }
+        }
 
 
     }
@@ -22,6 +29,9 @@ namespace Assets.Scripts.Game.Weapons
     {
         DebugWeap,
         pistol,
-        smg
+        smg,
+        shotgun,
+        flamethrower,
+        minigun
     }
 }

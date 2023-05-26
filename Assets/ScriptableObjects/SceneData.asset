@@ -26,7 +26,7 @@ MonoBehaviour:
     system: {fileID: 0}
   - SceneName: Tutorial
     SceneBuild: 1
-    Mode: 0
+    Mode: 2
     GData:
       Waves: []
     CData:
@@ -36,6 +36,6 @@ MonoBehaviour:
     SpecialCode: 0
     system: {fileID: 0}
   SpecialDatas:
-  - SceneName: 
-    SceneBuild: 0
-    Prefab: {fileID: 0}
+  - SceneName: Tutorial
+    SceneBuild: 1
+    Prefab: {fileID: 558074869846658266, guid: 6a166089685d0c341be878e8e4ef6176, type: 3}

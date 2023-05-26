@@ -16,8 +16,6 @@ namespace Assets.Scripts.Dialog
         public List<TextAsset> CutsceneDialogJsons;
         public List<Story> CutsceneDialogStory = new List<Story>();
 
-        public int a;
-        public int b;
         public Sprite[] SpeakerSprite;
         public Sprite[] BalloonSprite;
 
@@ -47,12 +45,10 @@ namespace Assets.Scripts.Dialog
         private void StoryListInitialize(List<TextAsset> Jsons, List<Story> Storylist)
         {
             Storylist.Clear();
-            foreach (TextAsset str in DialogJsons)
+            foreach (TextAsset str in Jsons)
             {
                 Storylist.Add(new Story(str.text));
             }
-            b = Jsons.Count;
-            a = Storylist.Count;
         }
 #if UNITY_EDITOR
         private void OnEnable()
@@ -90,7 +86,8 @@ namespace Assets.Scripts.Dialog
         speaker1_1,
         speaker1_2,
         speaker2_0,
-        none
+        none,
+        anon
     }
     public enum DialogBalloon
     {

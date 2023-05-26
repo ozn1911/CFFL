@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ee3c2b3fd6419e43aeb5a24c64a873f, type: 3}
+  m_Name: Tutorial_StoryStorage
+  m_EditorClassIdentifier: 
+  DialogJsons:
+  - {fileID: 4900000, guid: a09502c15e9bd2042a6e86623f7f7250, type: 3}
+  - {fileID: 4900000, guid: 076008a7c9e479749a4d7ad9489b4416, type: 3}
+  - {fileID: 4900000, guid: 423b0acbd8cb2e54eb54bcab0ad18c4e, type: 3}

@@ -51,9 +51,15 @@ namespace Assets.Scripts.Game.Weapons
                 _weaponStructures = new WeaponStructure[_weapons.Length];
                 Ammonution = new uint[_weapons.Length];
                 _ammoClip = new uint[_weapons.Length];
+
+
                 for (int i = 0; i < _weapons.Length; i++)
                 {
                     _weaponStructures[i] = _weapons[i].GetComponent<WeaponStructure>();
+                    if(Ammonution[i] == 0 && _ammoClip[i] == 0)
+                    {
+                        //_ignoreWeapons.Add(i);
+                    }
                 }
             } 
             #endregion
@@ -136,6 +142,7 @@ namespace Assets.Scripts.Game.Weapons
             _weapons[((int)_currentWeapon)].SetActive(true);
             if(_ignoreWeapons.Contains(((int)_currentWeapon)))
             {
+                
                 WeapSwitch(swtch > 0 ? 1 : -1);
             }
 
@@ -207,6 +214,10 @@ namespace Assets.Scripts.Game.Weapons
             }
             else
             {
+                if(Ammonution[clip] == 0)
+                {
+                    //_ignoreWeapons.Add(clip);
+                }
                 uint preMinus = Ammonution[clip];
                 Ammonution[clip] = 0;
                 _ammoClip[clip] += preMinus;
@@ -223,7 +234,22 @@ namespace Assets.Scripts.Game.Weapons
 
         #endregion
 
+        public void GetAmmo(s_GetAmmo GetAmmoInput)
+        {
+            int temp = ((int)GetAmmoInput.weapon);
+            Ammonution[temp] += GetAmmoInput.amount;
+            if(Ammonution[temp] > WeaponStats.instance.Weapons[temp].MaxAmmo)
+            {
+                Ammonution[temp] = WeaponStats.instance.Weapons[temp].MaxAmmo;
+            }
 
+            _ignoreWeapons.Remove(weapon);
+        }
+        public struct s_GetAmmo
+        {
+            public WeaponsEnum weapon;
+            public uint amount;
+        }
 
 
     }

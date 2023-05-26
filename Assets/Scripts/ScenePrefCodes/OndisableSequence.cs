@@ -8,7 +8,7 @@ namespace Assets.Scripts.ScenePrefCodes
 
         private void OnDisable()
         {
-            SendMessageUpwards("TaskCompleted");
+            SendMessageUpwards("TaskCompleted", SendMessageOptions.DontRequireReceiver);
         }
     }
 }
