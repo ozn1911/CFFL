@@ -17,25 +17,40 @@ MonoBehaviour:
     SceneBuild: 2
     Mode: 1
     GData:
+      isKindaRandom: 0
       Waves: []
+      SubsToNextScene: 0
     CData:
       StoryCode: 1
       song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
-      GoesToNextLevel: 0
     SpecialCode: 0
     system: {fileID: 0}
+    GoesToNextLevel: 0
   - SceneName: Tutorial
     SceneBuild: 1
     Mode: 2
     GData:
+      isKindaRandom: 0
       Waves: []
+      SubsToNextScene: 0
     CData:
       StoryCode: 1
       song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
-      GoesToNextLevel: 0
     SpecialCode: 0
-    system: {fileID: 0}
-  SpecialDatas:
-  - SceneName: Tutorial
+    system: {fileID: 558074869846658266, guid: 6a166089685d0c341be878e8e4ef6176, type: 3}
+    GoesToNextLevel: 1
+  - SceneName: Game
     SceneBuild: 1
-    Prefab: {fileID: 558074869846658266, guid: 6a166089685d0c341be878e8e4ef6176, type: 3}
+    Mode: 2
+    GData:
+      isKindaRandom: 0
+      Waves:
+      - Enemies: []
+      SubsToNextScene: 15
+    CData:
+      StoryCode: 1
+      song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}
+    SpecialCode: 0
+    system: {fileID: 5210889872873229235, guid: 13b3d28f27f044540840a3c3172e8066, type: 3}
+    GoesToNextLevel: 0
+  SpecialDatas: []

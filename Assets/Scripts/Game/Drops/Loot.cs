@@ -6,6 +6,15 @@ namespace Assets.Scripts.Game.Drops
 {
     public class Loot : MonoBehaviour
     {
-        
+        private void OnDisable()
+        {
+            
+        }
     }
+
+
+
+
+
+
 }

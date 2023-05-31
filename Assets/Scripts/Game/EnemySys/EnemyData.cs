@@ -34,6 +34,7 @@ namespace Assets.Scripts.Game.EnemySys
     public enum Enemy
     {
         cube,
-        golem
+        golem,
+        scorpion
     }
 }

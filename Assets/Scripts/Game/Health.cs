@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using UnityEngine;
 
 namespace Assets.Scripts.Game
@@ -8,7 +9,18 @@ namespace Assets.Scripts.Game
         [SerializeField]
         float _baseMaxHP = 100;
         float _maxHealthPoints;
+        public float MaxHealthPoints
+        {
+            get => _maxHealthPoints;
+            set => _maxHealthPoints = value;
+        }
+
         [SerializeField]
+        public float HealthPoints
+        {
+            get => _healthPoints;
+            set => _healthPoints = value;
+        }
         float _healthPoints;
         [SerializeField, Min(0)]
         float _shieldPoints = 0;
@@ -26,6 +38,15 @@ namespace Assets.Scripts.Game
             if(_healthPoints <= 0)
             {
                 SendMessage("CharacterDeath",SendMessageOptions.DontRequireReceiver);
+                switch(tag)
+                {
+                    case "Enemy":
+                        SendMessageUpwards("EnemyDeath", SendMessageOptions.DontRequireReceiver);
+                        break;
+                    case "Player":
+                        SendMessageUpwards("PlayerDeath", SendMessageOptions.DontRequireReceiver);
+                        break;
+                }
                 gameObject.SetActive(false);
             }
         }

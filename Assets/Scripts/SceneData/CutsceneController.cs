@@ -30,7 +30,7 @@ namespace Assets.Scripts.SceneData
 
         public void DialogFinish(object a,EventArgs e)
         {
-            if(SceneDataObject.instance.GetSceneDataStruct().CData.GoesToNextLevel)
+            if(SceneDataObject.instance.GetSceneDataStruct().GoesToNextLevel)
             {
                 SceneLoader.instance.NextScene();
             }

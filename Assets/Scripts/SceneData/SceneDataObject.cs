@@ -27,6 +27,11 @@ namespace Assets.Scripts.SceneData
         {
             return SceneDatas[sceneCode].SceneBuild;
         }
+
+        /// <summary>
+        /// remember, this adds to SceneCode player pref
+        /// </summary>
+        /// <returns></returns>
         public int GetNextSceneBuild()
         {
             var temp = sceneCode;
@@ -43,6 +48,7 @@ namespace Assets.Scripts.SceneData
 
 
 
+    #region a lot of structs
 
     [Serializable]
     public struct SceneDataStruct
@@ -54,6 +60,7 @@ namespace Assets.Scripts.SceneData
         public CutsceneData CData;
         public int SpecialCode;
         public GameObject system;
+        public bool GoesToNextLevel;
     }
     [Serializable]
     public struct SpecialDataStruct
@@ -69,12 +76,15 @@ namespace Assets.Scripts.SceneData
     {
         public int StoryCode;
         public AudioClip song;
-        public bool GoesToNextLevel;
+
     }
     [Serializable]
     public struct GameData
     {
+        public bool isKindaRandom;
         public Wave[] Waves;
+        public int SubsToNextScene;
+        public int count;
     }
     [Serializable]
     public struct Wave
@@ -86,7 +96,8 @@ namespace Assets.Scripts.SceneData
     {
         public Enemy Enemy;
         public int Count;
-    }
+    } 
+    #endregion
 
     public enum SceneMode
     {

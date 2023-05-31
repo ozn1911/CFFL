@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Threading.Tasks;
 using Assets.Scripts.Dialog;
 using System;
+using Assets.Scripts.Game;
+using Assets.Scripts.SceneData;
 
 namespace Assets.Scripts.ScenePrefCodes
 {
@@ -16,7 +18,11 @@ namespace Assets.Scripts.ScenePrefCodes
         DialogRunnerV2 drv2;
         [SerializeField]
         StoryStorage Stories;
-        private void DialogFinish(object a, EventArgs e)
+        private void TaskCompleteEvent(object a, EventArgs e)
+        {
+            TaskCompleted();
+        }
+        public void TaskCompleted_()
         {
             TaskCompleted();
         }
@@ -30,15 +36,17 @@ namespace Assets.Scripts.ScenePrefCodes
 
         private void OnEnable()
         {
-            DialogRunnerV2.DialogFinish += DialogFinish;
+            DialogRunnerV2.DialogFinish += TaskCompleteEvent;
         }
         private void OnDisable()
         {
-            DialogRunnerV2.DialogFinish -= DialogFinish;
+            DialogRunnerV2.DialogFinish -= TaskCompleteEvent;
+            Gate.instance.GateEntered -= TaskCompleteEvent;
         }
         private void OnDestroy()
         {
-            DialogRunnerV2.DialogFinish -= DialogFinish;
+            DialogRunnerV2.DialogFinish -= TaskCompleteEvent;
+            Gate.instance.GateEntered -= TaskCompleteEvent;
         }
 
         private IEnumerator TutorialSequence()
@@ -50,19 +58,28 @@ namespace Assets.Scripts.ScenePrefCodes
             Ammo.SetActive(true);
             RunDialogAtIndex(1); //both actions trigger task completion, thus safety is needed to prevent any bug from happening
 
+
+
             yield return WaitCompletion();
-            if(!SafetyChecked())
+            if (!SafetyChecked())
+            {
                 yield return WaitCompletion();
+            }
 
             Tagret.SetActive(true);
             RunDialogAtIndex(2);
 
             yield return WaitCompletion();
             if (!SafetyChecked())
+            {
                 yield return WaitCompletion();
-
-
+            }
+            RunDialogAtIndex(3);
+            yield return WaitCompletion();
+            Gate.instance.OpenGate();
+            Gate.instance.GateEntered += TaskCompleteEvent;
             Debug.Log("completed");
+            Undestroy.Instance.WhenSceneEnd();
         }
 
         private void RunDialogAtIndex(int index)

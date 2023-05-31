@@ -39,7 +39,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558074869215683004}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6448be8e501ee5b468c0b37ccd0efe2e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -91,7 +91,7 @@ GameObject:
   - component: {fileID: 558074869846658084}
   m_Layer: 0
   m_Name: Tutorial
-  m_TagString: Untagged
+  m_TagString: System
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -110,6 +110,7 @@ Transform:
   m_Children:
   - {fileID: 558074870255818183}
   - {fileID: 558074869267683348}
+  - {fileID: 5412084794888032372}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -125,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf44197a3dc259243af807095a334135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Ammo: {fileID: 0}
+  Ammo: {fileID: 5412084794888032375}
   Tagret: {fileID: 828600702459159416}
   drv2: {fileID: 0}
   Stories: {fileID: 11400000, guid: 51af8b38022217d4297f0f170e1bc071, type: 2}
@@ -204,7 +205,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558074870513695251}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6448be8e501ee5b468c0b37ccd0efe2e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -249,12 +250,103 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 558074871149087717}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 6448be8e501ee5b468c0b37ccd0efe2e, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1, y: 9.598244, z: 29.409222}
   m_Center: {x: 0, y: 4.299122, z: 0.33493233}
+--- !u!1001 &1196807400
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 558074869846658267}
+    m_Modifications:
+    - target: {fileID: 248954336, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: Tagret
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 248954336, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: amount
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 64.56569
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2600002
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 75.974525
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478431, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_Name
+      value: AmmoKit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5412084793767478431, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+--- !u!4 &5412084794888032372 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5412084793767478428, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+  m_PrefabInstance: {fileID: 1196807400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5412084794888032375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5412084793767478431, guid: 77fa1050340ee4b4584b4c74c7fadd4e, type: 3}
+  m_PrefabInstance: {fileID: 1196807400}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1680451134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412084794888032375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de30ad078e02bc7469f94b308b8f7ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &558074869300502057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -369,7 +461,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 2
-  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
 --- !u!114 &558074869300502069
@@ -468,7 +559,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 2
-  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
 --- !u!1001 &558074870678775447
@@ -555,7 +645,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 2
-  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
 --- !u!1001 &558074870825803861
@@ -642,7 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 2
-  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
 --- !u!1001 &558074871092109451
@@ -729,6 +817,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 2
-  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0

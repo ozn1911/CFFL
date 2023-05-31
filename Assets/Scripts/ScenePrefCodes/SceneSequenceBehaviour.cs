@@ -19,7 +19,14 @@ namespace Assets.Scripts.ScenePrefCodes
 
         public void TaskCompleted()
         {
-            complete = true;
+            if (complete)
+            {
+                safety = true;
+            }
+            else
+            {
+                complete = true;
+            }
         }
         /// <summary>
         /// use with 'TaskCompleted()'
@@ -27,18 +34,11 @@ namespace Assets.Scripts.ScenePrefCodes
         /// <returns></returns>
         public IEnumerator WaitCompletion()
         {
-            if (!complete)
-            {
                 while (!complete)
                 {
                     yield return new WaitForSeconds(.5f);
                 }
                 complete = false;
-            }
-            else
-            {
-                safety = true;
-            }
         }
         public bool SafetyChecked()
         {
