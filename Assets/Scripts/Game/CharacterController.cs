@@ -30,10 +30,10 @@ namespace Assets.Scripts.Game
         /// </summary>
         Vector3 _move;
         [SerializeField] float _speed;
+
+        Action UpdateFuction;
         #endregion
         #region Events
-
-        public static event EventHandler MyEvent;
         #endregion
         #endregion
         #region Unity Functions
@@ -42,14 +42,14 @@ namespace Assets.Scripts.Game
 
             GetRigidbody(Rigidbody: out _rb);
 
-            if (MyEvent == null)
+            if (true)
             {
                 switch (Platform.instance._Platform)
                 {
                     case PlatformEnum.Windows:
                     case PlatformEnum.Linux:
                     case PlatformEnum.Mac:
-                        MyEvent += PCUpdate;
+                        UpdateFuction = PCUpdate;
                         break;
                     case PlatformEnum.Android:
                         break;
@@ -65,7 +65,7 @@ namespace Assets.Scripts.Game
         }
         private void Update()
         {
-            MyEvent(this, EventArgs.Empty);
+            UpdateFuction();
 
         }
         private void FixedUpdate()
@@ -74,7 +74,7 @@ namespace Assets.Scripts.Game
         }
         #endregion
         #region Platform
-        void PCUpdate(object sender, EventArgs e)
+        void PCUpdate()
         {
             CalculateMovePC();
         }

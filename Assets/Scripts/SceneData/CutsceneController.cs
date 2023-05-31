@@ -30,10 +30,12 @@ namespace Assets.Scripts.SceneData
 
         public void DialogFinish(object a,EventArgs e)
         {
-            if(SceneDataObject.instance.GetSceneDataStruct().GoesToNextLevel)
-            {
-                SceneLoader.instance.NextScene();
-            }
+            Undestroy.Instance.WhenSceneEnd();
         }
+        private void OnDestroy()
+        {
+            DialogRunnerV2.DialogFinish -= DialogFinish;
+        }
+
     }
 }

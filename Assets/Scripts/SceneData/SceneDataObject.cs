@@ -36,6 +36,7 @@ namespace Assets.Scripts.SceneData
         {
             var temp = sceneCode;
             temp++;
+            sceneCode = temp;
             PlayerPrefs.SetInt("SceneCode", temp);
             return SceneDatas[sceneCode].SceneBuild;
         }
@@ -43,6 +44,12 @@ namespace Assets.Scripts.SceneData
         public SceneDataStruct GetSceneDataStruct()
         {
             return SceneDatas[sceneCode];
+        }
+
+        [UnityEditor.MenuItem("a/reset")]
+        public static void ResetPlayerPrefLevel()
+        {
+            PlayerPrefs.SetInt("SceneCode", 0);
         }
     }
 

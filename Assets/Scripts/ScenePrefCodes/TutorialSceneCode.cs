@@ -52,11 +52,13 @@ namespace Assets.Scripts.ScenePrefCodes
         private IEnumerator TutorialSequence()
         {
             RunDialogAtIndex(0);
-            yield return WaitCompletion();
+            Debug.Log("dialog 0");
             yield return new WaitForSeconds(1);
+            yield return WaitCompletion();
 
             Ammo.SetActive(true);
             RunDialogAtIndex(1); //both actions trigger task completion, thus safety is needed to prevent any bug from happening
+            Debug.Log("dialog 1");
 
 
 
@@ -68,24 +70,29 @@ namespace Assets.Scripts.ScenePrefCodes
 
             Tagret.SetActive(true);
             RunDialogAtIndex(2);
-
+            Debug.Log("dialog 2");
             yield return WaitCompletion();
             if (!SafetyChecked())
             {
                 yield return WaitCompletion();
             }
             RunDialogAtIndex(3);
+            Debug.Log("dialog 3");
             yield return WaitCompletion();
             Gate.instance.OpenGate();
             Gate.instance.GateEntered += TaskCompleteEvent;
+            yield return WaitCompletion();
             Debug.Log("completed");
             Undestroy.Instance.WhenSceneEnd();
         }
 
         private void RunDialogAtIndex(int index)
         {
-            if(index < Stories.DialogStory.Count)
+            if (index < Stories.DialogStory.Count)
+            {
                 drv2.DialogCall(Stories.DialogStory[index]);
+
+            }
         }
     }
 }

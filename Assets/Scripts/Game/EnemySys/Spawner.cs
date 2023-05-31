@@ -60,7 +60,7 @@ namespace Assets.Scripts.Game.EnemySys
 
         private void Update()
         {
-            if(_lastSpawnTime < Time.time - SpawnTimer)
+            if(_lastSpawnTime < Time.time - SpawnTimer && _canSpawn)
             {
                 _lastSpawnTime = Time.time;
                 pools[0].ActivateEnemy();
