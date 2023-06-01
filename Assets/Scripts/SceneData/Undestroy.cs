@@ -31,6 +31,10 @@ namespace Assets.Scripts.SceneData
         }
         #endregion
 
+        private void OnDisable()
+        {
+            SceneManager.sceneLoaded -= OnSceneLoaded;
+        }
 
         void OnSceneLoaded(Scene scene, LoadSceneMode mode)
         {
@@ -53,10 +57,6 @@ namespace Assets.Scripts.SceneData
             
         }
 
-        private void OnDisable()
-        {
-            SceneManager.sceneLoaded -= OnSceneLoaded;
-        }
 
 
         public void WhenSceneEnd()

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Enemies:
   - Name: cube
-    Pref: {fileID: 0}
+    Pref: {fileID: 5210576780873676534, guid: 7e2283d69a424b144ae0b7413809c157, type: 3}
   - Name: golem
     Pref: {fileID: 0}
   - Name: scorpion

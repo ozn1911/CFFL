@@ -47,7 +47,7 @@ MonoBehaviour:
     GData:
       isKindaRandom: 1
       Waves: []
-      SubsToNextScene: 15
+      SubsToNextScene: 85490
       count: 0
     CData:
       StoryCode: 1
