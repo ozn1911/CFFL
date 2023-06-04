@@ -1,40 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.AI;
 using System;
-
-
-
-
+using Assets.Scripts.Game.Weapons;
 
 namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
 {
-    /// <summary>
-    /// i have attempted to chatgpt here, didnt work, i deleted it all and now i will write...
-    /// </summary>
-    public class EnemyCube : MonoBehaviour
+    public class EnemyScorpion : MonoBehaviour
     {
         public float MovementSpeed = 5f;
-        public float DashSpeed = 20f;
-        public float DashRange = 3f;
-        public float DashCD = 5f;
+
+        [SerializeField]
+        private WeaponStructure _weap;
+        public float WeaponRange = 25f;
+
 
         private Rigidbody _rb;
         private Transform _player;
-        private bool isDashing = false;
-        private Vector3 _dashTarget;
-        private float _lastDash;
-        private int _safetyticks;
-        [SerializeField]
-        private int SafetyLimit = 500;
         private NavMeshPath _navPath;
-
-        /// <summary>
-        /// me discovering Action be like:
-        /// *proceeds with "i dont want to play with you" meme template on everything else*
-        /// </summary>
         Action CurrentAcion;
-
         Vector3 _moveDir;
+        bool _firing;
+        float _lastTimeFired;
+        [SerializeField]
+        float _fireCD;
 
         private void Awake()
         {
@@ -51,6 +40,11 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
         private void FixedUpdate()
         {
             _rb.velocity = _moveDir;
+            if (_lastTimeFired + _fireCD < Time.time)
+            {
+                _lastTimeFired = Time.time;
+                FireBullet();
+            }
         }
 
         private void Move()
@@ -64,7 +58,7 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                 // Find the first reachable corner along the path
                 for (int i = 0; i < _navPath.corners.Length; i++)
                 {
-                    if (Vector3.Distance(transform.position, _navPath.corners[i]) > 2f)
+                    if (Vector3.Distance(transform.position, _navPath.corners[i]) > 3f)
                     {
                         cornerIndex = i;
                         break;
@@ -87,31 +81,24 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                 transform.rotation = Quaternion.LookRotation(_moveDir, Vector3.up);
             }
 
-
-            if (_lastDash < Time.time - DashCD)
+            if(Vector3.Distance(transform.position, _player.position) < WeaponRange)
             {
-                if (Vector3.Distance(transform.position, _player.position) < DashRange)
-                {
-                    _lastDash = Time.time;
-                    _dashTarget = _player.position;
-                    _dashTarget = transform.position + (_dashTarget - transform.position).normalized * (DashRange + 20);
-                    _safetyticks = 0;
-                    CurrentAcion = Dash;
-                }
+                _moveDir = Vector3.zero;
+                CurrentAcion = Firing;
             }
         }
 
-        private void Dash()
+        private void Firing()
         {
-            if(!(Vector3.Distance(transform.position, _dashTarget) < 3) && _safetyticks < SafetyLimit)
+            if (Vector3.Distance(transform.position, _player.position) > WeaponRange)
             {
-                _moveDir = (_dashTarget - transform.position).normalized * DashSpeed;
-                _safetyticks++;
-            }
-            else
-            {
+                _firing = false;
                 CurrentAcion = Move;
             }
+        }
+        private void FireBullet()
+        {
+            _weap.Pool.FireBulletLookat(start: _weap.Barrel.position, direction: _player.position, damage: 5, speed: 0.5f, bulletLifetime: 2);
         }
 
 
@@ -132,27 +119,6 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                     Gizmos.color = Color.blue;
                     Gizmos.DrawSphere(corner, 0.1f);
                 }
-            }
-        }
-
-        private void OnCollisionEnter(Collision collision)
-        {
-            if(CurrentAcion == Dash)
-            {
-                switch(collision.transform.tag)
-                {
-                    case "Obstacle":
-                        CurrentAcion = Move;
-                        break;
-                    case "Player":
-                        collision.transform.SendMessage("TakeDamage", 30,SendMessageOptions.DontRequireReceiver);
-                        break;
-
-                }
-            }
-            else if(CurrentAcion == Move)
-            {
-                collision.transform.SendMessage("TakeDamage", 10, SendMessageOptions.DontRequireReceiver);
             }
         }
     }

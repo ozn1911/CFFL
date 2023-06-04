@@ -18,7 +18,7 @@ namespace Assets.Scripts.Game.Weapons
         float lastfire;
         private int _reloadTicks = 0;
         private WeaponStructure[] _weaponStructures;
-
+        Weapon[] wpStats;
 
         Ray ray;
         RaycastHit hit;
@@ -61,7 +61,9 @@ namespace Assets.Scripts.Game.Weapons
                         //_ignoreWeapons.Add(i);
                     }
                 }
-            } 
+            }
+
+            wpStats = WeaponStats.instance.Weapons;
             #endregion
         }
         
@@ -105,7 +107,7 @@ namespace Assets.Scripts.Game.Weapons
         private void FixedUpdate()
         {
             ReloadUpdate();
-            Weapon[] wpStats = WeaponStats.instance.Weapons;
+
             if (mousefire)
                 if (lastfire + wpStats[((int)_currentWeapon)].FireRate < Time.time)
                 {

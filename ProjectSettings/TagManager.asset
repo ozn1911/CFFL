@@ -10,6 +10,7 @@ TagManager:
   - Growable
   - Dialog
   - System
+  - Obstacle
   layers:
   - Default
   - TransparentFX
