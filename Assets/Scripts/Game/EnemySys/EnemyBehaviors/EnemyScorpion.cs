@@ -39,8 +39,9 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
         }
         private void FixedUpdate()
         {
+            _moveDir.y = _rb.velocity.y;
             _rb.velocity = _moveDir;
-            if (_lastTimeFired + _fireCD < Time.time)
+            if (_lastTimeFired + _fireCD < Time.time && CurrentAcion == Firing)
             {
                 _lastTimeFired = Time.time;
                 FireBullet();
@@ -95,6 +96,9 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                 _firing = false;
                 CurrentAcion = Move;
             }
+            Vector3 lookTag = (_player.position - transform.position);
+            lookTag.y = 0;
+            transform.rotation = Quaternion.LookRotation(lookTag, Vector3.up);
         }
         private void FireBullet()
         {

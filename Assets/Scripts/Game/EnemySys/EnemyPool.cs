@@ -22,7 +22,7 @@ namespace Assets.Scripts.Game.EnemySys
         [SerializeField, NonReorderable]
         GameObject[] _enemyPool;//not in use anymore but it still here so i can see if i messed it up
         [SerializeField]
-        List<GameObject> enemyPool;
+        List<GameObject> enemyPool = new List<GameObject>();
         //TODO: change array to list that supports waves, add count to living enemies, add event in case when enemies ends;
         [SerializeField]
         GameObject _enemyTemplate;
@@ -76,6 +76,20 @@ namespace Assets.Scripts.Game.EnemySys
             return temp;
         }
 
+        public void CreatePool(Wave wave)
+        {
+
+            foreach (s_EnemyWave enemyStruct in wave.Enemies)
+            {
+                for (int i = 0; i < enemyStruct.Count; i++)
+                {
+                    GameObject Enemy = Instantiate(EnemyData.instance.Enemies[((int)enemyStruct.Enemy)].Pref, transform);
+                    Enemy.SetActive(false);
+                    enemyPool.Add(Enemy);
+                }
+            }
+        }
+
 
         GameObject GetEnemy(out int index)
         {
@@ -96,14 +110,21 @@ namespace Assets.Scripts.Game.EnemySys
 
         }
 
-        public GameObject ActivateEnemy()
+        public bool ActivateEnemy()
         {
-            GameObject temp = GetEnemy(out int i);
-            Vector3 dir = Vector3.Normalize(_positioner2.position -_positioner1.position);
-            Vector3 pos = _positioner1.position + dir * Random.Range(0, Vector3.Distance(_positioner1.position, _positioner2.position));
-            temp.transform.position = pos;
-            temp.SetActive(true);
-            return temp;
+            if (_current < enemyPool.Count)
+            {
+                GameObject temp = GetEnemy(out int i);
+                Vector3 dir = Vector3.Normalize(_positioner2.position - _positioner1.position);
+                Vector3 pos = _positioner1.position + dir * Random.Range(0, Vector3.Distance(_positioner1.position, _positioner2.position));
+                temp.transform.position = pos;
+                temp.SetActive(true);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         private void OnDestroy()

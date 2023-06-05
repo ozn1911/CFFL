@@ -18,4 +18,4 @@ MonoBehaviour:
   - Name: golem
     Pref: {fileID: 0}
   - Name: scorpion
-    Pref: {fileID: 0}
+    Pref: {fileID: 8237945386337856985, guid: a94e9d659ce73c744befac236edf7773, type: 3}

@@ -12,7 +12,7 @@ namespace Assets.Scripts.Game.EnemySys
         [SerializeField]
         SceneDataObject dataObject;
         SceneDataStruct data;
-        List<EnemyPool> pools;
+        List<EnemyPool> pools = new List<EnemyPool>();
 
         [SerializeField]
         Transform _positioner1;
@@ -35,6 +35,7 @@ namespace Assets.Scripts.Game.EnemySys
             {
                 SelectAndCreatePoolWave();
             }
+            _canSpawn = true;
         }
 
         private void SelectAndCreatePoolWave()
@@ -43,6 +44,8 @@ namespace Assets.Scripts.Game.EnemySys
             {
                 int rand = Random.Range(0, data.GData.Waves.Length);
                 EnemyPool temp = EnemyPool.CreatePool(gameObject, data.GData.Waves[rand]);
+                //EnemyPool temp = gameObject.AddComponent<EnemyPool>();
+                //temp.CreatePool(data.GData.Waves[rand]);
                 temp.AssignPositioners(_positioner1, _positioner2);
                 pools.Add(temp);
                 _canSpawn = true;
@@ -63,7 +66,7 @@ namespace Assets.Scripts.Game.EnemySys
             if(_lastSpawnTime < Time.time - SpawnTimer && _canSpawn)
             {
                 _lastSpawnTime = Time.time;
-                pools[0].ActivateEnemy();
+                _canSpawn = pools[0].ActivateEnemy();
                 _enemyCount++;
             }
         }

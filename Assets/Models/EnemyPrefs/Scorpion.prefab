@@ -82,7 +82,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8237945386337856966
 Transform:
   m_ObjectHideFlags: 0
@@ -125,8 +125,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0641792, y: 1.533036, z: 7.016616}
-  m_Center: {x: 0, y: 0.14197385, z: -1.4215379}
+  m_Size: {x: 2.0641792, y: 1.2465563, z: 5.3450856}
+  m_Center: {x: 0, y: 0.2852137, z: -0.58577275}
 --- !u!65 &7632210682455312280
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -138,8 +138,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6.582683, y: 1, z: 4.6349416}
-  m_Center: {x: -0.018908262, y: 0, z: -2.3997633}
+  m_Size: {x: 3.0321863, y: 0.7835009, z: 3.501234}
+  m_Center: {x: 0, y: 0.108249545, z: -1.8329096}
 --- !u!54 &5789676998146092876
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -170,8 +170,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 5
   _weap: {fileID: 207100643962127282}
-  WeaponRange: 25
-  _fireCD: 0
+  WeaponRange: 10
+  _fireCD: 1
 --- !u!1001 &8237945387441485286
 PrefabInstance:
   m_ObjectHideFlags: 0
