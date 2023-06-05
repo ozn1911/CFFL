@@ -74,8 +74,6 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                 Vector3 targetPosition = _navPath.corners[cornerIndex];
                 Vector3 direction = Vector3.Normalize(targetPosition - transform.position);
 
-                Debug.Log("Target Position: " + targetPosition);
-                Debug.Log("Direction: " + direction);
 
                 _moveDir = direction * MovementSpeed;
                 _moveDir.y = 0;

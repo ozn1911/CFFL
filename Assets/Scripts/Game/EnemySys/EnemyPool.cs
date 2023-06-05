@@ -112,7 +112,7 @@ namespace Assets.Scripts.Game.EnemySys
 
         public bool ActivateEnemy()
         {
-            if (_current < enemyPool.Count)
+            if (_current < enemyPool.Count - 1)
             {
                 GameObject temp = GetEnemy(out int i);
                 Vector3 dir = Vector3.Normalize(_positioner2.position - _positioner1.position);

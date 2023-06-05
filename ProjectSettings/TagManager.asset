@@ -19,9 +19,9 @@ TagManager:
   - Water
   - UI
   - GunLayer
-  - navlayer
-  - 
-  - 
+  - EnemyLayer
+  - PlayerLayer
+  - PlayerBoundLayer
   - 
   - 
   - 

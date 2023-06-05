@@ -36,6 +36,14 @@ namespace Assets.Scripts.Game.Weapons
             ReloadSliderVibeCheck();
             ArraysOfWeapons();
 
+
+            foreach(GameObject obj in _weapons)
+            {
+                obj.SetActive(false);
+            }
+            _weapons[((int)_currentWeapon)].SetActive(true);
+
+
             #region Functions
             void ReloadSliderVibeCheck()
             {
