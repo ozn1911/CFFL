@@ -4701,6 +4701,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5958123094423326535, guid: dedbfd76e39fc724b8707373d52b0bf7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958123095306014294, guid: dedbfd76e39fc724b8707373d52b0bf7, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5958123096214464581, guid: dedbfd76e39fc724b8707373d52b0bf7, type: 3}
       propertyPath: m_Name
       value: Game Map

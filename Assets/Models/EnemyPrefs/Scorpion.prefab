@@ -76,13 +76,14 @@ GameObject:
   - component: {fileID: 7632210682455312280}
   - component: {fileID: 5789676998146092876}
   - component: {fileID: 538401013}
+  - component: {fileID: 1959085914681458364}
   m_Layer: 7
   m_Name: Scorpion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &8237945386337856966
 Transform:
   m_ObjectHideFlags: 0
@@ -172,6 +173,22 @@ MonoBehaviour:
   _weap: {fileID: 207100643962127282}
   WeaponRange: 10
   _fireCD: 1
+--- !u!208 &1959085914681458364
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8237945386337856985}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 2.5, y: 1.5, z: 3.5}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: -0.86}
+  m_TimeToStationary: 0.5
 --- !u!1001 &8237945387441485286
 PrefabInstance:
   m_ObjectHideFlags: 0
