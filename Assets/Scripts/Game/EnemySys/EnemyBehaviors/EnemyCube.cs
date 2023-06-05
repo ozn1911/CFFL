@@ -20,7 +20,6 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
 
         private Rigidbody _rb;
         private Transform _player;
-        private bool isDashing = false;
         private Vector3 _dashTarget;
         private float _lastDash;
         private int _safetyticks;

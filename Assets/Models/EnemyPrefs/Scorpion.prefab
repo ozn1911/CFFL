@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3562963045318173797}
   - component: {fileID: 207100643962127282}
   - component: {fileID: 1569716038152104275}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: silah
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -76,7 +76,7 @@ GameObject:
   - component: {fileID: 7632210682455312280}
   - component: {fileID: 5789676998146092876}
   - component: {fileID: 538401013}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Scorpion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -226,6 +226,10 @@ PrefabInstance:
     - target: {fileID: 4218796925030557067, guid: c9e0571730618f44d9ab25cd546fc61b, type: 3}
       propertyPath: m_Name
       value: akrep Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218796925030557067, guid: c9e0571730618f44d9ab25cd546fc61b, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c9e0571730618f44d9ab25cd546fc61b, type: 3}
