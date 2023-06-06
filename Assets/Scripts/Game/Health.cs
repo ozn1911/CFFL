@@ -15,12 +15,13 @@ namespace Assets.Scripts.Game
             set => _maxHealthPoints = value;
         }
 
-        [SerializeField]
+
         public float HealthPoints
         {
             get => _healthPoints;
             set => _healthPoints = value;
         }
+        [SerializeField]
         float _healthPoints;
         [SerializeField, Min(0)]
         float _shieldPoints = 0;
@@ -76,5 +77,11 @@ namespace Assets.Scripts.Game
             }
         }
         
+
+        public float GetHpDivision()
+        {
+            return HealthPoints / _maxHealthPoints;
+        }
+
     }
 }

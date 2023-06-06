@@ -16,5 +16,10 @@ namespace Assets.Scripts.Game.Drops
                 transform.parent.gameObject.SetActive(false);
             }
         }
+
+        public void setLootRand()
+        {
+            amount = Random.Range(10,30);
+        }
     }
 }

@@ -30,7 +30,7 @@ MonoBehaviour:
     ClipAmmo: 6
     ReloadTicks: 30
   - WeaponName: smg
-    BulletDamage: 3
+    BulletDamage: 5
     BulletSpeed: 1
     BulletLifetime: 5
     FireRate: 0.05

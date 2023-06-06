@@ -14,9 +14,10 @@ GameObject:
   - component: {fileID: 5210576780873676426}
   - component: {fileID: 1823506116}
   - component: {fileID: 8007342356915025526}
+  - component: {fileID: 4753303112183155337}
   m_Layer: 7
   m_Name: cube
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -50,6 +51,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _baseMaxHP: 100
+  _healthPoints: 0
   _shieldPoints: 0
   _DamageResist: 0
 --- !u!65 &5210576780873676427
@@ -97,7 +99,7 @@ MonoBehaviour:
   DashSpeed: 20
   DashRange: 19.96
   DashCD: 5
-  SafetyLimit: 500
+  SafetyLimit: 200
 --- !u!208 &8007342356915025526
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -109,11 +111,23 @@ NavMeshObstacle:
   serializedVersion: 3
   m_Shape: 1
   m_Extents: {x: 2, y: 2, z: 2}
-  m_MoveThreshold: 0.1
+  m_MoveThreshold: 0.21
   m_Carve: 0
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
-  m_TimeToStationary: 0.5
+  m_TimeToStationary: 0.25
+--- !u!114 &4753303112183155337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5210576780873676534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ca98f522b63a4e4b80770c68c6c6b93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5210576781649173511
 PrefabInstance:
   m_ObjectHideFlags: 0

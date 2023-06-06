@@ -141,10 +141,12 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                         CurrentAcion = Move;
                         break;
                     case "Player":
-                        collision.transform.SendMessage("TakeDamage", 30,SendMessageOptions.DontRequireReceiver);
+                    case "Enemy":
+                        collision.transform.SendMessage("TakeDamage", 30, SendMessageOptions.DontRequireReceiver);
                         break;
 
                 }
+
             }
             else if(CurrentAcion == Move)
             {

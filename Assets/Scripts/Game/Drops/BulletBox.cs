@@ -21,5 +21,12 @@ namespace Assets.Scripts.Game.Drops
                 transform.parent.gameObject.SetActive(false);
             }
         }
+
+        public void setLootRand()
+        {
+            int temp = Random.Range(1, 4);
+            Tagret = ((WeaponsEnum)temp);
+            amount = WeaponStats.instance.Weapons[temp].ClipAmmo * ((uint)Random.Range(1,4));
+        }
     }
 }

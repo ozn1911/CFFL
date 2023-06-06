@@ -20,8 +20,9 @@ namespace Assets.Scripts.Game.EnemySys
         Transform _positioner2;
 
 
-
+        [SerializeField]
         bool _canSpawn;
+        [SerializeField]
         int _enemyCount;
 
         public float SpawnTimer;
@@ -58,6 +59,8 @@ namespace Assets.Scripts.Game.EnemySys
             {
                 SelectAndCreatePoolWave();
             }
+            Gate.instance.CloseGate();
+            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(64f, 1.5f, 86f);
         }
 
 
@@ -66,8 +69,15 @@ namespace Assets.Scripts.Game.EnemySys
             if(_lastSpawnTime < Time.time - SpawnTimer && _canSpawn)
             {
                 _lastSpawnTime = Time.time;
-                _canSpawn = pools[0].ActivateEnemy();
-                _enemyCount++;
+                if (pools[0].ActivateEnemy())
+                {
+                    _canSpawn = true;
+                    _enemyCount++;
+                }
+                else
+                {
+                    _canSpawn = false;
+                }
             }
         }
 
@@ -84,6 +94,9 @@ namespace Assets.Scripts.Game.EnemySys
                 _canSpawn = false;
                 if(pools.Count <= 1)
                 {
+                    EnemyPool pool = pools[0];
+                    pools.RemoveAt(0);
+                    Destroy(pool);
                     Gate.instance.OpenGate();
                     Gate.instance.GateEntered += SceneEnd;
                 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6382831640576772924}
   - component: {fileID: 6382831640576772925}
   - component: {fileID: 6382831640576772914}
+  - component: {fileID: 6524505377871987070}
   m_Layer: 0
   m_Name: HpKit
   m_TagString: Untagged
@@ -64,6 +65,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 6382831640576772925}
   _sub: {fileID: 6854169610703125080}
+--- !u!114 &6524505377871987070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6382831640576772915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95993f78437f9414489864fe30dbcb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseMaxHP: 20
+  _healthPoints: 0
+  _shieldPoints: 0
+  _DamageResist: 0
 --- !u!1001 &6382831641060040115
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,8 +170,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5142606, y: 0.3778058, z: 0.24333096}
+  m_Size: {x: 0.5142606, y: 0.78, z: 0.24333096}
   m_Center: {x: -1.2664898e-12, y: 0.1798759, z: -0.08696499}
+--- !u!114 &1127112917411501161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6076823052623864034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10804a1f87337d143a048f4902e9a86a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  amount: 0
 --- !u!4 &6854169610703125080 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 69323af59f300e949b9a61190f843cbd, type: 3}

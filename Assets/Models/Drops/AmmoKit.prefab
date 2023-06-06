@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5412084793767478428}
   - component: {fileID: 5412084793767478429}
   - component: {fileID: 5412084793767478430}
+  - component: {fileID: 8723446917881075976}
   m_Layer: 0
   m_Name: AmmoKit
   m_TagString: Untagged
@@ -64,6 +65,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rb: {fileID: 5412084793767478429}
   _sub: {fileID: 5517242762082607472}
+--- !u!114 &8723446917881075976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5412084793767478431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95993f78437f9414489864fe30dbcb75, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseMaxHP: 20
+  _healthPoints: 0
+  _shieldPoints: 0
+  _DamageResist: 0
 --- !u!1001 &5412084793640355483
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -153,7 +170,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.36948672, y: 0.083321124, z: 0.50745636}
+  m_Size: {x: 0.36948672, y: 0.083321124, z: 0.86}
   m_Center: {x: -0.010221781, y: -0.00000001622966, z: 0.25372815}
 --- !u!114 &248954336
 MonoBehaviour:
@@ -167,6 +184,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91288d064ddabf342b239e64c43ffd19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Tagret: 0
+  amount: 0
 --- !u!4 &5517242762082607472 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: cbe9a02e111f06b449f9776be89ac5f8, type: 3}
