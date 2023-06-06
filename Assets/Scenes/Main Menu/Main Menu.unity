@@ -3110,7 +3110,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Isn''t it technically a salamander?
+
+
+    Has a flamethrower for a tail.
+
+    Stay
+    away.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: -2346107119048912044, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
@@ -3868,7 +3874,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Scorpy
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4350,7 +4356,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Smells like sulfur.
+
+
+    Moves faster than the player,
+
+    upon getting
+    close, it charges towards the player.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: -2346107119048912044, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
@@ -4933,7 +4945,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: 'Very cuddly and crumbly.
+
+
+    Moves very slowly but has a lethal ground
+    slam.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: -2346107119048912044, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
@@ -7525,7 +7541,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Brimstone
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -8632,7 +8648,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: New Text
+  m_text: Rock Golem
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
   m_sharedMaterial: {fileID: -2346107119048912044, guid: 8b0d61d18edb9824ea66f74ea657f6d0, type: 2}
