@@ -57,6 +57,14 @@ namespace Assets.Scripts.SceneData
             
         }
 
+        public void GoToMainMenu()
+        {
+            SceneManager.LoadScene(0);
+        }
+        public void ReloadScene()
+        {
+            SceneLoader.instance.StartGameButton();
+        }
 
 
         public void WhenSceneEnd()

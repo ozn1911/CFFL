@@ -37,7 +37,14 @@ namespace Assets.Scripts.Game.EnemySys
                 SelectAndCreatePoolWave();
             }
             _canSpawn = true;
+            WaveEnd += Spawner_WaveEnd;
         }
+
+        private void Spawner_WaveEnd(object sender, System.EventArgs e)
+        {
+            
+        }
+        
 
         private void SelectAndCreatePoolWave()
         {
@@ -84,6 +91,7 @@ namespace Assets.Scripts.Game.EnemySys
         private void OnDestroy()
         {
             Gate.instance.GateEntered -= SceneEnd;
+            WaveEnd -= Spawner_WaveEnd;
         }
 
         public void EnemyDeath()

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,10 +25,19 @@ namespace Assets.Scripts.Game.Weapons
         RaycastHit hit;
         bool mousefire;
 
+        public event EventHandler UpdateImageThing;
+        void EmptyForEvent(object obj, EventArgs e) 
+        { }//this dunction exist so it wont burst the code when ther is no reciever
+
+
 #nullable enable
         [SerializeField]
         Slider? reloadSlider;
         bool reloadSliderExistence;
+
+        public WeaponsEnum CurrentWeapon { get => _currentWeapon;}
+
+
 
 
 
@@ -35,7 +45,7 @@ namespace Assets.Scripts.Game.Weapons
         {
             ReloadSliderVibeCheck();
             ArraysOfWeapons();
-
+            UpdateImageThing += EmptyForEvent;
 
             foreach(GameObject obj in _weapons)
             {
@@ -134,6 +144,10 @@ namespace Assets.Scripts.Game.Weapons
                     }
                 }
         }
+        private void OnDestroy()
+        {
+            UpdateImageThing -= EmptyForEvent;
+        }
 
 
 
@@ -165,6 +179,7 @@ namespace Assets.Scripts.Game.Weapons
                 }
                 _currentWeapon = (WeaponsEnum)temp;
             }
+            UpdateImageThing(this, EventArgs.Empty);
         }
 
         public void StartReload(int ticks)
@@ -232,6 +247,7 @@ namespace Assets.Scripts.Game.Weapons
                 Ammonution[clip] = 0;
                 _ammoClip[clip] += preMinus;
             }
+            UpdateImageThing(this, EventArgs.Empty);
         }
 
 
@@ -254,6 +270,8 @@ namespace Assets.Scripts.Game.Weapons
             }
 
             _ignoreWeapons.Remove(temp);
+
+            UpdateImageThing(this, EventArgs.Empty);
         }
         public struct s_GetAmmo
         {

@@ -50,6 +50,15 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
         private void FixedUpdate()
         {
             _rb.velocity = _moveDir;
+            if(CurrentAcion == Dash)
+            {
+                if (_safetyticks < SafetyLimit)
+                {
+                    _safetyticks++;
+                }
+                else
+                    CurrentAcion = Move;
+            }
         }
 
         private void Move()
@@ -80,7 +89,8 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
 
                 _moveDir = direction * MovementSpeed;
                 _moveDir.y = 0;
-                transform.rotation = Quaternion.LookRotation(_moveDir, Vector3.up);
+                if(_moveDir != Vector3.zero)
+                    transform.rotation = Quaternion.LookRotation(_moveDir, Vector3.up);
             }
 
 
@@ -99,10 +109,9 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
 
         private void Dash()
         {
-            if(!(Vector3.Distance(transform.position, _dashTarget) < 3) && _safetyticks < SafetyLimit)
+            if(!(Vector3.Distance(transform.position, _dashTarget) < 3))
             {
                 _moveDir = (_dashTarget - transform.position).normalized * DashSpeed;
-                _safetyticks++;
             }
             else
             {

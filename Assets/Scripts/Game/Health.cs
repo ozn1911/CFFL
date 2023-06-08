@@ -6,6 +6,7 @@ namespace Assets.Scripts.Game
 {
     public class Health : MonoBehaviour
     {
+        public event EventHandler OnDeath;
         [SerializeField]
         float _baseMaxHP = 100;
         float _maxHealthPoints;
@@ -32,6 +33,16 @@ namespace Assets.Scripts.Game
         {
             _maxHealthPoints = _baseMaxHP;
             _healthPoints = _maxHealthPoints;
+            OnDeath += event_OnDeath;
+        }
+        private void OnDestroy()
+        {
+            OnDeath -= event_OnDeath;
+        }
+
+        private void event_OnDeath(object sender, EventArgs e)
+        {
+            gameObject.SetActive(false);
         }
 
         private void Update()
@@ -48,7 +59,8 @@ namespace Assets.Scripts.Game
                         SendMessageUpwards("PlayerDeath", SendMessageOptions.DontRequireReceiver);
                         break;
                 }
-                gameObject.SetActive(false);
+
+                OnDeath(this, EventArgs.Empty);
             }
         }
 
