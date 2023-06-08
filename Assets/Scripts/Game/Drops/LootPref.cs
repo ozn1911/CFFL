@@ -10,7 +10,7 @@ namespace Assets.Scripts.Game.Drops
         public GameObject BulletBox;
         public GameObject HealthPack;
 
-        private void OnEnable()
+        public void Initialize()
         {
             instance = this;
         }

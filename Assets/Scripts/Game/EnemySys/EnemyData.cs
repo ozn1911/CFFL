@@ -8,7 +8,7 @@ namespace Assets.Scripts.Game.EnemySys
     public class EnemyData : ScriptableObject
     {
         public static EnemyData instance;
-        private void OnEnable()
+        public void Initialize()
         {
             instance = this;
         }

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEditor;
 using Ink.Runtime;
 using Assets.Scripts.Dialog;
 using System;
@@ -14,11 +15,12 @@ namespace Assets.Scripts.SceneData
     {
         public static SceneDataObject instance;
         int sceneCode;
-        private void OnEnable()
+        public void Initialize()
         {
             instance = this;
             sceneCode = PlayerPrefs.GetInt("SceneCode");
         }
+        
         public SceneDataStruct[] SceneDatas;
         public SpecialDataStruct[] SpecialDatas;
 
@@ -46,7 +48,7 @@ namespace Assets.Scripts.SceneData
             return SceneDatas[sceneCode];
         }
 
-        [UnityEditor.MenuItem("a/reset")]
+        //[MenuItem("a/reset")]
         public static void ResetPlayerPrefLevel()
         {
             PlayerPrefs.SetInt("SceneCode", 0);

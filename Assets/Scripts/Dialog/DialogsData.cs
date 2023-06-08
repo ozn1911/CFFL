@@ -34,13 +34,6 @@ namespace Assets.Scripts.Dialog
         #endregion
 
         #region Awake
-        [ContextMenu("Awake")]
-        private void Awake()
-        {
-            Data = this;
-            StoryListInitialize(DialogJsons,DialogStory);
-            StoryListInitialize(CutsceneDialogJsons,CutsceneDialogStory);
-        }
 
         private void StoryListInitialize(List<TextAsset> Jsons, List<Story> Storylist)
         {
@@ -50,12 +43,14 @@ namespace Assets.Scripts.Dialog
                 Storylist.Add(new Story(str.text));
             }
         }
-#if UNITY_EDITOR
-        private void OnEnable()
+
+        public void Initialize()
         {
-            Awake();
+            Data = this;
+            StoryListInitialize(DialogJsons, DialogStory);
+            StoryListInitialize(CutsceneDialogJsons, CutsceneDialogStory);
         }
-#endif 
+
         #endregion
     }
 

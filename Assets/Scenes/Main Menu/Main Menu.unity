@@ -1854,12 +1854,12 @@ VideoPlayer:
   m_VideoClip: {fileID: 32900000, guid: f1dcb5725c988c64386104c5de8a1914, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
-  m_TargetCamera: {fileID: 0}
+  m_TargetCamera: {fileID: 1715019469}
   m_TargetTexture: {fileID: 0}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: _MainTex
-  m_RenderMode: 2
+  m_RenderMode: 0
   m_AspectRatio: 2
   m_DataSource: 0
   m_PlaybackSpeed: 1
@@ -3278,6 +3278,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c13550ea0d49e94290e8c4d7fa293d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  listobj:
+    diag: {fileID: 11400000, guid: 04b3c5d93cd17a84bba2c93cdc3b26af, type: 2}
+    enemy: {fileID: 11400000, guid: 8c575f36a6c4e384a889d833df6f118b, type: 2}
+    loot: {fileID: 11400000, guid: 441ade5b8645ab94295a558669741a7f, type: 2}
+    platform: {fileID: 11400000, guid: 9c8666b5e06ed2147940cf329cacc123, type: 2}
+    scene: {fileID: 11400000, guid: 67e66669fb0dded4089e2eb5ad10cc9a, type: 2}
+    weap: {fileID: 11400000, guid: 702d282142f0320449ec14c9fd66f727, type: 2}
 --- !u!114 &613670764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6299,7 +6306,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1293296928}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1937258244}
+        m_TargetAssemblyTypeName: Assets.Scripts.Main_Menu.MainMenuUIControl, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1293296928
 MonoBehaviour:
   m_ObjectHideFlags: 0

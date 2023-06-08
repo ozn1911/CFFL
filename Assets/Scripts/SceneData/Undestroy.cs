@@ -3,6 +3,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using System;
 using Assets.Scripts.Game.EnemySys;
+using Assets.Scripts.Dialog;
+using Assets.Scripts.Game.Drops;
+using Assets.Scripts.Game.Weapons;
 
 namespace Assets.Scripts.SceneData
 {
@@ -12,6 +15,10 @@ namespace Assets.Scripts.SceneData
         #region Instancing
         public static Undestroy? Instance;
         SceneDataObject data => SceneDataObject.instance;
+        #endregion
+        [SerializeField]
+        ScriptableList listobj;
+
 
         private void Awake()
         {
@@ -24,13 +31,22 @@ namespace Assets.Scripts.SceneData
             {
                 Destroy(gameObject);
             }
+
+            listobj.diag.Initialize();
+            listobj.enemy.Initialize();
+            listobj.loot.Initialize();
+            listobj.platform.Initialize();
+            listobj.scene.Initialize();
+            listobj.weap.Initialize();
         }
         private void OnEnable()
         {
             SceneManager.sceneLoaded += OnSceneLoaded;
         }
-        #endregion
 
+
+        
+        
         private void OnDisable()
         {
             SceneManager.sceneLoaded -= OnSceneLoaded;
@@ -103,6 +119,19 @@ namespace Assets.Scripts.SceneData
                     SceneManager.LoadScene(0);
                 }
             }
+        }
+
+
+
+        [Serializable]
+        public struct ScriptableList
+        {
+            public DialogsData diag;
+            public EnemyData enemy;
+            public LootPref loot;
+            public Platform platform;
+            public SceneDataObject scene;
+            public WeaponStats weap;
         }
     }
 }

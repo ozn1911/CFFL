@@ -11,7 +11,7 @@ namespace Assets.Scripts.Game.Weapons
     {
         public static WeaponStats instance;
         public Weapon[] Weapons;
-        private void OnEnable()
+        public void Initialize()
         {
             instance = this;
         }

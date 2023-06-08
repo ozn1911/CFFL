@@ -19,7 +19,7 @@ namespace Assets.Scripts
         //}
 
 
-        private void OnEnable()
+        public void Initialize()
         {
             instance = this;
         }
