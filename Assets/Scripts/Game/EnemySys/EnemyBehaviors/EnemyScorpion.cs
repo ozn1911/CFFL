@@ -25,16 +25,20 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
         [SerializeField]
         float _fireCD;
 
+        [SerializeField]
+        float fix;
+
         private Animator animator; //AnimChanged
    
 
         private void Awake()
         {
+            
             _player = GameObject.FindGameObjectWithTag("Player").transform;
             _rb = GetComponent<Rigidbody>();
             CurrentAcion = Move;
             _navPath = new NavMeshPath();
-            animator = this.gameObject.GetComponent<Animator>(); //AnimChanged
+            animator = this.gameObject.GetComponentInChildren<Animator>(); //AnimChanged
         }
 
         private void Update()
@@ -82,15 +86,17 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
 
                 _moveDir = direction * MovementSpeed;
                 _moveDir.y = 0;
-                transform.rotation = Quaternion.LookRotation(_moveDir, Vector3.up);
+                transform.rotation = Quaternion.LookRotation(GetFixedDir(_moveDir.normalized), Vector3.up);
             }
 
-            if(Vector3.Distance (transform.position, _player.position) < WeaponRange)
+            if (Vector3.Distance (transform.position, _player.position) < WeaponRange)
             {
                 _moveDir = Vector3.zero;
                 CurrentAcion = Firing;
             }
         }
+
+
 
         private void Firing()
         {
@@ -101,11 +107,20 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
             }
             Vector3 lookTag = (_player.position - transform.position);
             lookTag.y = 0;
-            transform.rotation = Quaternion.LookRotation(lookTag, Vector3.up);
+            transform.rotation = Quaternion.LookRotation(GetFixedDir(lookTag.normalized), Vector3.up);
         }
         private void FireBullet()
         {
             _weap.Pool.FireBulletLookat(start: _weap.Barrel.position, direction: _player.position, damage: 5, speed: 0.5f, bulletLifetime: 2);
+        }
+
+        private Vector3 GetFixedDir(Vector3 dir)
+        {
+
+            Quaternion rotation = Quaternion.Euler(0f, fix, 0f); // Create a Quaternion representing the desired rotation
+
+            Vector3 lookdir = rotation * dir; // Rotate the vector using the Quaternion
+            return lookdir;
         }
 
 

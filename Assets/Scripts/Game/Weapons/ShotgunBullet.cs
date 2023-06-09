@@ -35,6 +35,7 @@ namespace Assets.Scripts.Game.Weapons
                 transf.rotation = transform.rotation;
                 transf.Rotate(new Vector3(Random.Range(-Spread, Spread), Random.Range(-Spread, Spread), 0));
                 Bullet script = transf.GetComponent<Bullet>();
+                script.TrailClear();
                 script.Damage = Damage;
                 script.Lifetime = Lifetime;
                 script.Speed = Speed;

@@ -31,10 +31,10 @@ namespace Assets.Scripts.Game.PointSys
         }
         private void Update()
         {
-            if(_lastPointTime < Time.time - 1 && HP.HealthPoints != 0 && spawner.GameNotFinished)
+            if(_lastPointTime < Time.time - 1 && HP.HealthPoints > 0 && spawner.GameNotFinished)
             {
                 _lastPointTime = Time.time;
-                _points += (int)(1 * (Mathf.Min(100/HP.HealthPoints, 2)) * Mathf.Min(10, 360/_surrounds.GetAngle));
+                _points += (int)(1 * (Mathf.Min(100/HP.HealthPoints, 3)) * Mathf.Min(10, 360/_surrounds.GetAngle));
                 text.text = _points.ToString();
             }
         }

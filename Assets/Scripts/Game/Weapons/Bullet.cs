@@ -39,7 +39,11 @@ namespace Assets.Scripts.Game.Weapons
 
         private void OnDisable()
         {
-            if(trail != null)
+            TrailClear();
+        }
+        public void TrailClear()
+        {
+            if (trail != null)
                 trail.Clear();
         }
     }

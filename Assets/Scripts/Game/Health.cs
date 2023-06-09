@@ -22,7 +22,7 @@ namespace Assets.Scripts.Game
             get => _healthPoints;
             set => _healthPoints = value;
         }
-        [SerializeField]
+        [SerializeField, Min(0)]
         float _healthPoints;
         [SerializeField, Min(0)]
         float _shieldPoints = 0;
