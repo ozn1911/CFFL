@@ -33,6 +33,11 @@ namespace Assets.Scripts.Game
 
         Action UpdateFuction;
         #endregion
+        #region Animation Controller
+        private Animator animator; //AnimChanged
+
+
+        #endregion
         #region Events
         #endregion
         #endregion
@@ -41,6 +46,7 @@ namespace Assets.Scripts.Game
         {
 
             GetRigidbody(Rigidbody: out _rb);
+            animator = this.gameObject.GetComponent<Animator>(); //AnimChanged
 
             if (true)
             {
@@ -113,6 +119,15 @@ namespace Assets.Scripts.Game
             _move = Vector3.ClampMagnitude(_move, 1);
             _move *= 50 * _speed * Time.deltaTime;
             _rb.velocity = new Vector3(_move.x, _rb.velocity.y, _move.z);
+
+            float rb_Speed = Vector3.Magnitude(_rb.velocity);//AnimChanged
+
+            if (rb_Speed >= 0.01f) //AnimChanged
+                animator.SetBool("RunAnimBool", true);
+            else //AnimChanged
+                animator.SetBool("RunAnimBool", false);
+
+
         }
         #endregion
         #endregion

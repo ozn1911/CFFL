@@ -25,12 +25,16 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
         [SerializeField]
         float _fireCD;
 
+        private Animator animator; //AnimChanged
+   
+
         private void Awake()
         {
             _player = GameObject.FindGameObjectWithTag("Player").transform;
             _rb = GetComponent<Rigidbody>();
             CurrentAcion = Move;
             _navPath = new NavMeshPath();
+            animator = this.gameObject.GetComponent<Animator>(); //AnimChanged
         }
 
         private void Update()
@@ -44,6 +48,7 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
             if (_lastTimeFired + _fireCD < Time.time && CurrentAcion == Firing)
             {
                 _lastTimeFired = Time.time;
+                animator.SetTrigger("NewakrepAttackAnim"); //AnimChanged 
                 FireBullet();
             }
         }
@@ -80,7 +85,7 @@ namespace Assets.Scripts.Game.EnemySys.EnemyBehaviors
                 transform.rotation = Quaternion.LookRotation(_moveDir, Vector3.up);
             }
 
-            if(Vector3.Distance(transform.position, _player.position) < WeaponRange)
+            if(Vector3.Distance (transform.position, _player.position) < WeaponRange)
             {
                 _moveDir = Vector3.zero;
                 CurrentAcion = Firing;
