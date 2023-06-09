@@ -102,7 +102,7 @@ MonoBehaviour:
   Damage: 0
   Lifetime: 0
   GetDisabledOnHit: 1
-  trail: {fileID: 0}
+  trail: {fileID: -8254341186754380643}
   altBullet: {fileID: 8792940572824200966, guid: b79639c27ed2c3b478d8230555164c59, type: 3}
   bulletAmount: 5
   Bullets: []
@@ -115,7 +115,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8792940572824200966}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1

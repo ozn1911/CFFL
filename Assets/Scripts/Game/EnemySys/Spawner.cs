@@ -28,7 +28,7 @@ namespace Assets.Scripts.Game.EnemySys
         public float SpawnTimer;
         float _lastSpawnTime;
 
-        public bool GameNotFinished { get => _canSpawn && _enemyCount > 0; }
+        public bool GameNotFinished { get => _canSpawn || _enemyCount > 0; }
 
         private void Awake()
         {
