@@ -47,11 +47,12 @@ namespace Assets.Scripts.SceneData
         {
             return SceneDatas[sceneCode];
         }
-
-        //[MenuItem("a/reset")]
+#if UNITY_EDITOR
+        [MenuItem("a/reset")]
+#endif
         public static void ResetPlayerPrefLevel()
         {
-            PlayerPrefs.SetInt("SceneCode", 0);
+            PlayerPrefs.SetInt("SceneCode", 1);
         }
     }
 

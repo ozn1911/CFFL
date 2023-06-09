@@ -25,7 +25,7 @@ namespace Assets.Scripts.Game
 
         private void OnTriggerEnter(Collider other)
         {
-            if(other.tag.Equals("Player"))
+            if(other.tag.Equals("Player") && !gateDoor.activeSelf)
             {
                 GateEntered(this,System.EventArgs.Empty);
             }

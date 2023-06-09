@@ -36,7 +36,6 @@ namespace Assets.Scripts.Game.EnemySys
             {
                 SelectAndCreatePoolWave();
             }
-            _canSpawn = true;
             WaveEnd += Spawner_WaveEnd;
         }
 
@@ -62,12 +61,15 @@ namespace Assets.Scripts.Game.EnemySys
 
         public void RedoNRetry()
         {
-            for (int i = 0; i < data.GData.count; i++)
+            if (pools.Count == 0)
             {
-                SelectAndCreatePoolWave();
+                for (int i = 0; i < data.GData.count; i++)
+                {
+                    SelectAndCreatePoolWave();
+                }
+                Gate.instance.CloseGate();
+                GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(64f, 1.5f, 86f);
             }
-            Gate.instance.CloseGate();
-            GameObject.FindGameObjectWithTag("Player").transform.position = new Vector3(64f, 1.5f, 86f);
         }
 
 

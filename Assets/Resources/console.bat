@@ -16,6 +16,3 @@ cd C:\Windows
 
 cmd /k
 @echo on
-
-
-rem is best girl

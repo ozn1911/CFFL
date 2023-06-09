@@ -4681,6 +4681,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: {fileID: 1611558374}
   _img: {fileID: 390010511}
+--- !u!114 &1611558379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611558369}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f94a3b1e72368484c85ab7da85e8ae66, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DetectionRadius: 20
+  _angle: 0
 --- !u!1 &1645210281
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ namespace Assets.Scripts.SceneData
             if (mode == LoadSceneMode.Single)
             {
                 SceneDataStruct scenedata = data.GetSceneDataStruct();
-                if(scenedata.system != null)
+                if(scenedata.system != null && SceneManager.GetActiveScene().buildIndex != 0)
                     Instantiate(scenedata.system);
                 switch (scenedata.Mode)
                 {
