@@ -28,6 +28,8 @@ namespace Assets.Scripts.Game.EnemySys
         public float SpawnTimer;
         float _lastSpawnTime;
 
+        public bool GameNotFinished { get => _canSpawn && _enemyCount > 0; }
+
         private void Awake()
         {
             instance = this;
@@ -37,6 +39,7 @@ namespace Assets.Scripts.Game.EnemySys
                 SelectAndCreatePoolWave();
             }
             WaveEnd += Spawner_WaveEnd;
+            
         }
 
         private void Spawner_WaveEnd(object sender, System.EventArgs e)

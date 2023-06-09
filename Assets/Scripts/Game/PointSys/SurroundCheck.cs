@@ -11,11 +11,12 @@ namespace Assets.Scripts.Game.PointSys
         [SerializeField]
         private float _angle;
         public float Angle { get => _angle; }
+        public float GetAngle { get => GetMaxEmptyAngle(); }
         private List<float> _enemyAngles = new List<float>();
 
 
 
-        void Update()
+        public float GetMaxEmptyAngle()
         {
             _enemyAngles.Clear();
             Collider[] enemies = Physics.OverlapSphere(transform.position, DetectionRadius);
@@ -52,7 +53,7 @@ namespace Assets.Scripts.Game.PointSys
             {
                 _angle = 360;
             }
-
+            return _angle;
         }
 
 

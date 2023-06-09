@@ -6,6 +6,7 @@ using Assets.Scripts.Game.EnemySys;
 using Assets.Scripts.Dialog;
 using Assets.Scripts.Game.Drops;
 using Assets.Scripts.Game.Weapons;
+using Assets.Scripts.Game.PointSys;
 
 namespace Assets.Scripts.SceneData
 {
@@ -57,17 +58,20 @@ namespace Assets.Scripts.SceneData
             if (mode == LoadSceneMode.Single)
             {
                 SceneDataStruct scenedata = data.GetSceneDataStruct();
-                if(scenedata.system != null && SceneManager.GetActiveScene().buildIndex != 0)
-                    Instantiate(scenedata.system);
-                switch (scenedata.Mode)
+                if (scenedata.system != null && SceneManager.GetActiveScene().buildIndex != 0)
                 {
-                    case SceneMode.Game:
-                        break;
-                    case SceneMode.Cutscene:
-                        
-                        break;
-                    case SceneMode.special:
-                        break;
+                    Instantiate(scenedata.system);
+                    switch (scenedata.Mode)
+                    {
+                        case SceneMode.Game:
+                            Component.FindObjectOfType<PointPerSecond>().enabled = true;
+                            break;
+                        case SceneMode.Cutscene:
+
+                            break;
+                        case SceneMode.special:
+                            break;
+                    }
                 }
             }
             
