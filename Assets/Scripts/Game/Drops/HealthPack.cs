@@ -14,6 +14,7 @@ namespace Assets.Scripts.Game.Drops
             {
                 other.SendMessage("HealDamage", amount, SendMessageOptions.DontRequireReceiver);
                 transform.parent.gameObject.SetActive(false);
+                Destroy(transform);
             }
         }
 

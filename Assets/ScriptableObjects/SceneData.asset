@@ -73,7 +73,7 @@ MonoBehaviour:
         - Enemy: 0
           Count: 9
       SubsToNextScene: 85490
-      count: 1
+      count: 8225
     CData:
       StoryCode: 1
       song: {fileID: 8300000, guid: 00e31ed73156c1e4ba93f6eba4713c2e, type: 3}

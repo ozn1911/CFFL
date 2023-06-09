@@ -19,6 +19,7 @@ namespace Assets.Scripts.Game.Drops
                 pack.amount = amount;
                 other.SendMessage("GetAmmo", pack, SendMessageOptions.DontRequireReceiver);
                 transform.parent.gameObject.SetActive(false);
+                Destroy(transform);
             }
         }
 

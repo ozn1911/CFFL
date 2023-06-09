@@ -20,6 +20,15 @@ namespace Assets.Scripts.Game.Weapons
         private int _reloadTicks = 0;
         private WeaponStructure[] _weaponStructures;
         Weapon[] wpStats;
+        [SerializeField]
+        AudioSource ASource_sound;
+        [SerializeField]
+        AudioClip clip_gun;
+        [SerializeField]
+        AudioClip clip_shotgun;
+        [SerializeField]
+        AudioClip clip_smg;
+        bool smgplays;
 
         Ray ray;
         RaycastHit hit;
@@ -43,6 +52,11 @@ namespace Assets.Scripts.Game.Weapons
 
         private void Awake()
         {
+            ASource_sound.clip = clip_gun;
+
+
+
+
             ReloadSliderVibeCheck();
             ArraysOfWeapons();
             UpdateImageThing += EmptyForEvent;
@@ -127,6 +141,7 @@ namespace Assets.Scripts.Game.Weapons
             ReloadUpdate();
 
             if (mousefire)
+            {
                 if (lastfire + wpStats[((int)_currentWeapon)].FireRate < Time.time)
                 {
                     if (_ammoClip[((int)_currentWeapon)] > 0)
@@ -143,6 +158,12 @@ namespace Assets.Scripts.Game.Weapons
                         }
                     }
                 }
+            }
+            else if(smgplays)
+            {
+                ASource_sound.Stop();
+                smgplays = false;
+            }
         }
         private void OnDestroy()
         {
@@ -180,6 +201,18 @@ namespace Assets.Scripts.Game.Weapons
                 _currentWeapon = (WeaponsEnum)temp;
             }
             UpdateImageThing(this, EventArgs.Empty);
+            switch(_currentWeapon)
+            {
+                case WeaponsEnum.pistol:
+                    ASource_sound.clip = clip_gun;
+                    break;
+                case WeaponsEnum.smg:
+                    ASource_sound.clip = clip_smg;
+                    break;
+                case WeaponsEnum.shotgun:
+                    ASource_sound.clip = clip_shotgun;
+                    break;
+            }
         }
 
         public void StartReload(int ticks)
@@ -256,6 +289,16 @@ namespace Assets.Scripts.Game.Weapons
             WeaponStructure structure = _weaponStructures[((int)_currentWeapon)];
             Weapon wp = WeaponStats.instance.Weapons[((int)_currentWeapon)];
             structure.Pool.FireBulletLookat(start: structure.Barrel.position, direction: hit.point, wp.BulletDamage, wp.BulletSpeed, wp.BulletLifetime);
+            if (_currentWeapon != WeaponsEnum.smg)
+            {
+                ASource_sound.Play();
+                smgplays = false;
+            }
+            else if (!ASource_sound.isPlaying)
+            {
+                ASource_sound.Play();
+                smgplays = true;
+            }
         }
 
         #endregion
