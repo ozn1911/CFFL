@@ -4715,7 +4715,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f94a3b1e72368484c85ab7da85e8ae66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DetectionRadius: 20
+  DetectionRadius: 30
   _angle: 0
 --- !u!82 &1611558380
 AudioSource:

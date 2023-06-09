@@ -52,7 +52,7 @@ namespace Assets.Scripts.SceneData
 #endif
         public static void ResetPlayerPrefLevel()
         {
-            PlayerPrefs.SetInt("SceneCode", 1);
+            PlayerPrefs.SetInt("SceneCode", 0);
         }
     }
 
