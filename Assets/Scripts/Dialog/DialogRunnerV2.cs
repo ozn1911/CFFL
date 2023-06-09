@@ -27,10 +27,6 @@ namespace Assets.Scripts.Dialog
         }
         private void Update()
         {
-            if(Input.GetButtonDown("Cancel"))
-            {
-                TestDiag();
-            }
         }
 
 
